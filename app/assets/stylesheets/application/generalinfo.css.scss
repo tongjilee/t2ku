@@ -1,0 +1,19 @@
+
+div.generalinfo #content { width: 600px; }
+div.generalinfo #content .panel { margin: 0 auto; }
+div.generalinfo #content .panel .panel-body { padding: 0; }
+div.generalinfo #content .panel .panel-body .part { padding: 20px; }
+div.generalinfo #content .panel .panel-body .part p.owner { margin-bottom: 15px; }
+div.generalinfo #content .panel .panel-body .part.active { background-color: #1f2028; }
+div.generalinfo #content .panel .panel-body .part.active input.text { background-color: #c2e3f3; -moz-box-shadow: 2px 2px 6px #232323; -webkit-box-shadow: 2px 2px 6px #232323; }
+div.generalinfo #content .panel .panel-body .part.active:first-child { -moz-border-radius-topright: 14px; -webkit-border-top-right-radius: 14px; -moz-border-radius-topleft: 14px; -webkit-border-top-left-radius: 14px; }
+div.generalinfo #content .panel .panel-body .part a.helpbutton { display: inline-block; vertical-align: bottom; margin-bottom: -3px; }
+div.generalinfo #content .panel .panel-body .part code { display: block; font-family: "monaco", monospace; font-size: 13px; padding-bottom: 12px; margin-left: 180px; }
+div.generalinfo #content .panel .panel-body .part h3 { color: #bfb8e5; padding-right: 1em; margin-top: -2px; }
+div.generalinfo #content .panel .panel-body .part h3 img { margin-bottom: -2px; }
+div.generalinfo #content .panel .panel-body .part input.text { margin-right: 10px; width: 211px; display: inline-block;}
+div.generalinfo #content .panel .panel-body .part .heroku-url { padding-top: 10px; }
+div.generalinfo #content .panel .panel-body #rename .text { margin-right: 0; }
+div.generalinfo #content .panel .panel-body p.collaborator, div.generalinfo #content .panel .panel-body p.domain { line-height: 24px; padding-bottom: 5px; margin-right: 0; }
+div.generalinfo #content .panel .panel-body p.collaborator span.email, div.generalinfo #content .panel .panel-body p.collaborator a.url, div.generalinfo #content .panel .panel-body p.domain span.email, div.generalinfo #content .panel .panel-body p.domain a.url { display: inline-block; width: 225px; margin: 0; padding: 0; margin-right: 10px; }
+

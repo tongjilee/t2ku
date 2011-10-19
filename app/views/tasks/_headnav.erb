@@ -1,0 +1,41 @@
+<% if 'new'==controller.action_name %>
+
+<div id="headnav">
+  <div class="lefttop">
+    <div class="group" id="main_menu" onclick="event.stopPropagation()">
+      <%= link_to tt('main_menu'),'#',id:"main_menu_link"%>
+			<ol style="display:none" id="menu_body"> 
+				<%= render :file=>'application/_sys_menu' %>
+			</ol>
+		</div>
+	</div>
+	<div class="righttop" id="nav2">
+		<% if user_signed_in? %>
+      <%= link_to 'My Account',account_path,id:'account_link',class:'special group' %>
+      <%= link_to I18n.t('t2ku.navigation_special.logout'),destroy_user_session_path,:method=>:delete,id:"logout_link",class:'special group' %>
+		<% else %>
+			<%= link_to I18n.t('t2ku.navigation_special.login'),new_user_session_path,id:"login_link",class:'special group' %>
+      <%= link_to I18n.t('t2ku.navigation_special.reg'),new_user_registration_path,id:"reg_link",class:'special group' %>
+		<% end %>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  $('#main_menu_link').click(function () {
+		$('ol#menu_body').slideToggle('fast');
+		return false;
+	});
+	$(document.body).click(function () {
+    if($('ol#menu_body').is(':visible')){
+			$('ol#menu_body').slideToggle('fast');
+		} 
+  });
+});
+</script>
+
+<% else %>
+
+<%= render file:'application/_headnav' %>
+
+<% end %>

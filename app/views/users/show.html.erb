@@ -1,0 +1,36 @@
+<div class="myapps-index">
+<div id="content" style="width: 980px;">
+
+<div class="panel" id="app-index">
+  <div class="panel-body">
+    <form id="searchbar">
+      <fieldset class="part">
+        <h2 id="searchcount" style="width:102px">
+					<%= image_tag(avatar_url(@user),style:'margin-bottom:14px;border: 1px solid #82859E;padding:2px') %>
+				</h2>
+				<h2 id="searchcount" style="font-size:28px;margin-top:10px">
+					<%= @user.name %><br>
+					<span style="font-size:14px;color:#82859E">
+						<% if @user.signature and @user.signature!='' %>
+							<%= @user.signature %>
+						<% else %>
+							Member since <%= @user.created_at.to_date %>
+						<% end %>
+					</span>
+				</h2>
+        <div class="field">
+          <label>
+						<%= link_to 'Message' %>
+            <span class="separator"> | </span>
+						<%= link_to 'Follow' %>
+          </label>
+        </div>
+      </fieldset>
+    </form>
+    
+    
+  </div>
+</div>
+
+</div>
+</div>

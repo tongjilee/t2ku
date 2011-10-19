@@ -1,0 +1,219 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.tasks {
+  #ajax_failure_content{
+		padding-left:10px;
+	}
+  .CodeMirror,.text_desc_textarea_cla {
+    background: hsla(240,11%,4%,.5);
+    border: 1px solid hsla(237,32%,63%,.15);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: none repeat scroll 0 0 rgba(9, 9, 11, 0.5);
+    border: 1px solid rgba(130, 133, 190, 0.15);
+    border-radius: 5px 5px 5px 5px;
+    font-family: Monaco,monospace,Courier;
+    line-height: 18px;
+    padding:10px;
+    margin-bottom: 12px;
+    .CodeMirror-scroll {
+      cursor:text;
+      font-size:13px;
+      min-height:203px;
+      line-height:24px;
+      height: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+  .text_desc_textarea_cla{
+    color:#9390AB;
+    width:532px;
+    padding:15px;
+    cursor:text;
+    font-size:13px;
+    min-height:203px;
+    line-height:24px;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  #preview_button,#qiuzheng_button{
+    font-size:13px;
+    float:right;
+    text-align:center;
+    width:102px;
+    $height:29px;
+    height:$height;
+    line-height:$height;
+    color:white;
+    &:hover{
+      color:white;
+    }
+  }
+
+  .go_button{
+    background: transparent url(/images/qiuzheng.png) no-repeat top left;
+    &:hover{
+      background-position:0px -29px !important;
+    }
+    &:active{
+      background-position:0px -58px !important;
+    }
+    margin-right:4px;
+  }
+  .js_button{
+    background: transparent url(/images/qiuzheng0.png) no-repeat top left;
+    &:hover{
+      background-position:0px -29px !important;
+    }
+    &:active{
+      background-position:0px 0px !important;
+    }
+    margin-right:10px;
+  }
+  
+  //page two
+  #query_form{
+
+  }
+  #query_wrapper{
+    cursor:text;
+    width:544px;
+    height:86px;
+    color:#9390AB;
+    background: none repeat scroll 0 0 rgba(9, 9, 11, 0.5);
+    border: 1px solid rgba(130, 133, 190, 0.15);
+    border-radius: 5px 5px 5px 5px;
+    margin-bottom: 12px;
+    padding: 10px;
+  }
+  #query_field{
+    background-color:transparent;
+    width:537px;
+    color:#9390AB;
+    line-height: 18px;
+    font-family: Monaco,monospace,Courier;
+    font-size:28px;
+    text-align:right;
+  }
+  #query_auxiliary{
+    background-color:transparent;
+    color:#9390AB;
+    color:#FFF;
+    width:537px;
+  }
+  #keyboard{
+    width:566px;
+    height:156px;
+    margin-left:2px;
+    div.leftcol{
+      width:360px;
+      height:156px;
+    }
+    div.rightcol{
+      width:200px;
+      height:156px;
+      margin-left:5px;
+    }
+    blockquote.rightleftcol{
+      width:150px;
+      height:60px;
+    }
+    blockquote.rightrightcol{
+      width:47px;
+      height:60px;
+    }
+    div.leftcol,div.rightcol,blockquote.rightleftcol,blockquote.rightrightcol{
+      float:left;
+      display:block;
+      div{
+        margin-right:3px;
+        margin-bottom:4px;
+        float:left;
+        cursor:pointer;
+        background: transparent url(/images/keyboard.png) no-repeat top left;
+        &:hover{
+          background-image: url(/images/keyboard_hover.png);
+        }
+        &:active{
+          background-image: url(/images/keyboard_active.png);
+        }
+      }
+    }
+    #keyboard_show,#keyboard_new,#keyboard_edit,#keyboard_search{width:87px;height:60px;}
+    #keyboard_show{background-position:0 0;}
+    #keyboard_new{background-position:-90px 0;}
+    #keyboard_edit{background-position:-180px 0;}
+    #keyboard_search{background-position:-270px 0;}
+    
+    
+    #keyboard_definition,#keyboard_theorem,#keyboard_problem,#keyboard_mission{width:87px;height:28px;}
+    #keyboard_definition{background-position:0 -64px;}
+    #keyboard_theorem{background-position:-90px -64px;}
+    #keyboard_problem{background-position:-180px -64px;}
+    #keyboard_mission{background-position:-270px -64px;}    
+    
+    #keyboard_of,#keyboard_no,#keyboard_about,#keyboard_proof{width:87px;height:28px;}
+    #keyboard_of{background-position:0 -96px;}
+    #keyboard_no{background-position:-90px -96px;}
+    #keyboard_about{background-position:-180px -96px;}
+    #keyboard_proof{background-position:-270px -96px;}
+    
+    
+    #keyboard_symbol,#keyboard_constructor,#keyboard_adjective,#keyboard_predicate{width:87px;height:28px;}
+    #keyboard_symbol{background-position:0 -128px;}
+    #keyboard_constructor{background-position:-90px -128px;}
+    #keyboard_adjective{background-position:-180px -128px;}
+    #keyboard_predicate{background-position:-270px -128px;}
+    
+    
+    
+    #keyboard_c,#keyboard_pm,#keyboard_div,#keyboard_times{width:47px;height:28px;}
+    #keyboard_c{background-position:-365px 0px;}
+    #keyboard_pm{background-position:-415px 0px;}
+    #keyboard_div{background-position:-465px 0px;}
+    #keyboard_times{background-position:-515px 0px;}
+    
+    
+    #keyboard_7,#keyboard_8,#keyboard_9,#keyboard_minus{width:47px;height:28px;}
+    #keyboard_7{background-position:-365px -32px;}
+    #keyboard_8{background-position:-415px -32px;}
+    #keyboard_9{background-position:-465px -32px;}
+    #keyboard_minus{background-position:-515px -32px;}
+    
+    #keyboard_4,#keyboard_5,#keyboard_6,#keyboard_plus{width:47px;height:28px;}
+    #keyboard_4{background-position:-365px -64px;}
+    #keyboard_5{background-position:-415px -64px;}
+    #keyboard_6{background-position:-465px -64px;}
+    #keyboard_plus{background-position:-515px -64px;}
+    
+    #keyboard_1,#keyboard_2,#keyboard_3{width:47px;height:28px;}
+    #keyboard_1{background-position:-365px -96px;}
+    #keyboard_2{background-position:-415px -96px;}
+    #keyboard_3{background-position:-465px -96px;}
+
+
+    #keyboard_point{
+      width:47px;
+      height:28px;
+      background-position:-465px -128px;
+    }
+    
+    #keyboard_go{
+      width:47px;
+      height:60px;
+      background-position:-515px -96px;
+    }
+    #keyboard_0{
+      width:97px;
+      height:28px;
+      background-position:-365px -128px;
+    }    
+
+  }
+  
+}

@@ -1,0 +1,25 @@
+<%= render :partial=>'devise/shared/head' %>
+<div id="login_reg_box">
+<div id="loginbox">
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	<h1><%= tt('loginreg.button11') %> <%= link_to "(#{tt('loginreg.besides_login')})", new_registration_path(resource_name),:class=>'special' %></h1>
+	  <div class="formbody">
+      	<label for="login">
+        	E-mail</label>
+					<%= f.text_field :email,:tabindex=>1,:class=>"text" %>
+
+      	<label for="password">
+        	<%= tt('loginreg.passwd') %>
+				</label>
+					<%= f.password_field :password,:tabindex=>2,:class=>"text" %>
+
+				<div style="text-align:center">
+      		<label class="submit_btn">
+						<%= f.submit "#{tt('loginreg.button11')}",:tabindex=>3%>
+	      	</label>
+				</div>
+	  </div>
+<% end %>
+</div>
+<%= render file:'devise/shared/_links' %>
+</div>

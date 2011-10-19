@@ -1,0 +1,92 @@
+
+html textarea, body textarea { font-size: 12px; padding: 7px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background-color: #c9c3e6; border: none; width: auto; }
+html input[type=text],html input[type=email], html input[type=password], body input[type=text], body input[type=email], body input[type=password] { font-size: 12px; padding: 7px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background-color: #c9c3e6; }
+html input[type=checkbox], body input[type=checkbox] { margin-right: 5px; }
+html input.submit, html input.button, html a.submit, html a.button, body input.submit, body input.button, body a.submit, body a.button { -moz-border-radius: 14px; -webkit-border-radius: 14px; -moz-box-shadow: 2px 2px 6px #232323; -webkit-box-shadow: 2px 2px 6px #232323; margin: 0; padding: 0; background-color: #9e8aff; text-shadow: #c9c3e6 0px 0px 2px; color: #16153b; font-size: 14px; display: inline-block; height: 28px; line-height: 27px; vertical-align: top; background-image: url(/images/button-smooth.png); background-repeat: repeat-x; background-position: center bottom; padding: 1px 20px 3px 20px; font-weight: bold; cursor: pointer; text-decoration: none; }
+html input.submit:hover, html input.button:hover, html a.submit:hover, html a.button:hover, body input.submit:hover, body input.button:hover, body a.submit:hover, body a.button:hover { text-decoration: none; }
+html input.submit:hover, html input.button:hover, html a.submit:hover, html a.button:hover, body input.submit:hover, body input.button:hover, body a.submit:hover, body a.button:hover { background-color: #c9c3e6; }
+html input.submit.disabled, html input.button.disabled, html a.submit.disabled, html a.button.disabled, body input.submit.disabled, body input.button.disabled, body a.submit.disabled, body a.button.disabled { background-color: #555555; text-shadow: #aaaaaa 0px 0px 2px; color: #191a20; }
+html input.submit.add, html input.submit.remove, html input.button.add, html input.button.remove, html a.submit.add, html a.submit.remove, html a.button.add, html a.button.remove, body input.submit.add, body input.submit.remove, body input.button.add, body input.button.remove, body a.submit.add, body a.submit.remove, body a.button.add, body a.button.remove { margin: 0; padding: 0; height: 30px; width: 30px; text-indent: -9000px; overflow: hidden; display: inline-block; background-image: none; background-repeat: no-repeat; background-position: left top; background-color: transparent; -moz-border-radius: 0; -webkit-border-radius: 0; background-repeat: no-repeat; -moz-box-shadow: none; -webkit-box-shadow: none; }
+html input.submit.add, html input.button.add, html a.submit.add, html a.button.add, body input.submit.add, body input.button.add, body a.submit.add, body a.button.add { background-image: url(/images/form-button-add.png); }
+html input.submit.remove, html input.button.remove, html a.submit.remove, html a.button.remove, body input.submit.remove, body input.button.remove, body a.submit.remove, body a.button.remove { background-image: url(/images/form-button-remove.png); }
+html input.destroy, html a.destroy, body input.destroy, body a.destroy { -moz-border-radius: 14px; -webkit-border-radius: 14px; -moz-box-shadow: 2px 2px 6px #232323; -webkit-box-shadow: 2px 2px 6px #232323; margin: 0; padding: 0; background-color: #9e8aff; text-shadow: #c9c3e6 0px 0px 2px; color: #16153b; font-size: 14px; display: inline-block; height: 28px; line-height: 27px; vertical-align: top; background-image: url(/images/button-smooth.png); background-repeat: repeat-x; background-position: center bottom; padding: 1px 20px 3px 20px; font-weight: bold; cursor: pointer; text-decoration: none; color: #0e0909; text-shadow: #999999 0px 0px 2px; background-color: #777777; background-image: url(/images/button-smooth-red.png); }
+html input.destroy:hover, html a.destroy:hover, body input.destroy:hover, body a.destroy:hover { text-decoration: none; }
+html input.destroy:hover, html a.destroy:hover, body input.destroy:hover, body a.destroy:hover { background-color: #a11c39; color: #2a0b14; text-shadow: #d07872 0px 0px 2px; }
+html a.button, html a.submit, html a.destroy, body a.button, body a.submit, body a.destroy { padding: 0 20px 0 20px; line-height: 28px; }
+html .notice, body .notice { color: white; padding: 10px 10px 8px 10px; margin-bottom: 15px; background-color: #5987a0; background-image: url(/images/notice-bkg.png); background-repeat: repeat-x; background-position: center bottom; -moz-border-radius: 7px; -webkit-border-radius: 7px; -moz-box-shadow: 2px 2px 4px #1d1d1d; -webkit-box-shadow: 2px 2px 4px #1d1d1d; }
+html .notice a, body .notice a { color: white; text-decoration: underline; }
+html .notice em, body .notice em { padding: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+html .notice h3, body .notice h3 { line-height: 30px; padding-top: 1px; background-image: url(/images/notice-icon-35x35.png); background-position: left top; background-repeat: no-repeat; padding-left: 35px; }
+html .notice.success, body .notice.success { background-color: #7c984c; background-image: url(/images/notice-success-bkg.png); }
+html .notice.success em, body .notice.success em { background-color: #d07872; color: #40111f; }
+html .notice.success h3, body .notice.success h3 { background: none; padding-left: 10px; line-height: 24px; }
+html .notice.error, body .notice.error { background-color: #a11c39; background-image: url(/images/notice-error-bkg.png); }
+html .notice.error em, body .notice.error em { background-color: #d07872; color: #40111f; }
+html .notice.error h3, body .notice.error h3 { background-image: url(/images/notice-error-icon-35x35.png); background-position: left top; background-repeat: no-repeat; padding-left: 40px; }
+html form .overview, body form .overview { padding: 20px; }
+html form .notice, body form .notice { margin-right: 20px; margin-left: 20px; margin-bottom: 20px; }
+html form fieldset, body form fieldset { overflow: auto; clear: both; border-top-width: 4px; border-top-color: #1f2028; border-top-style: solid; padding: 20px 30px 15px 30px; }
+html form fieldset:first-child, body form fieldset:first-child { border-top-style: none; }
+html form fieldset:last-child, body form fieldset:last-child { padding-bottom: 0; }
+html form fieldset.active, body form fieldset.active { background-color: #1f2028; }
+html form fieldset p.overview, body form fieldset p.overview { padding: 0 0 20px 0; }
+html form fieldset legend, html form fieldset h3, body form fieldset legend, body form fieldset h3 { color: #bfb8e5; padding-right: 1em; }
+html form fieldset h3, body form fieldset h3 { margin-bottom: 20px; padding-right: 0; }
+html form fieldset .row, body form fieldset .row { clear: both; overflow: hidden; }
+html form fieldset .row:last-child, body form fieldset .row:last-child { padding-bottom: 0; }
+html form fieldset .row .field, body form fieldset .row .field { float: left; margin-right: 20px; }
+html form fieldset .row .field:last-child, body form fieldset .row .field:last-child { margin-right: 0px; }
+html form fieldset .formError, body form fieldset .formError { margin: 0; padding-top: 7px; padding-left: 7px; color: #e1b5b6; font-size: 12px; display: block; clear: both; }
+html form fieldset .field, body form fieldset .field { margin-bottom: 15px; }
+html form fieldset .field label, body form fieldset .field label { margin-bottom: 2px; font-size: 12px; }
+html form fieldset .field label, html form fieldset .field input, html form fieldset .field .formError, body form fieldset .field label, body form fieldset .field input, body form fieldset .field .formError { display: block; }
+html form fieldset .field .formError, body form fieldset .field .formError { padding-top: 2px; padding-left: 0; }
+html form fieldset .field.active select, html form fieldset .field.active .text, body form fieldset .field.active select, body form fieldset .field.active .text { background-color: #c2e3f3; -moz-box-shadow: 2px 2px 6px #232323; -webkit-box-shadow: 2px 2px 6px #232323; }
+html form fieldset .field.active .selectbox, body form fieldset .field.active .selectbox { background-image: url(/images/form-select-active-closed.png); }
+html form fieldset .field.active .selectbox.open, body form fieldset .field.active .selectbox.open { background-image: url(/images/form-select-active-open.png); -moz-border-radius-bottomright: 0; -webkit-border-bottom-right-radius: 0; -moz-border-radius-bottomleft: 0; -webkit-border-bottom-left-radius: 0; }
+html form fieldset .field.error, body form fieldset .field.error { color: #d07872; }
+html form fieldset .field.error select, html form fieldset .field.error .text, body form fieldset .field.error select, body form fieldset .field.error .text { background-color: #d07872; }
+html form fieldset .field.error .selectbox, body form fieldset .field.error .selectbox { background-image: url(/images/form-select-error-closed.png); }
+html form fieldset .field.error .selectbox.open, body form fieldset .field.error .selectbox.open { background-image: url(/images/form-select-error-open.png); }
+html form fieldset .field.error .selectbox-wrapper, body form fieldset .field.error .selectbox-wrapper { background-color: #d07872; }
+html form fieldset .field.error.active select, html form fieldset .field.error.active .text, body form fieldset .field.error.active select, body form fieldset .field.error.active .text { background-color: #e1b5b6; }
+html form fieldset .field.error.active .selectbox, body form fieldset .field.error.active .selectbox { background-image: url(/images/form-select-error-active-closed.png); }
+html form fieldset .field.error.active .selectbox.open, body form fieldset .field.error.active .selectbox.open { background-image: url(/images/form-select-error-active-open.png); }
+html form fieldset .field.error.active .selectbox-wrapper, html form fieldset .field.error.active .ac_results, body form fieldset .field.error.active .selectbox-wrapper, body form fieldset .field.error.active .ac_results { background-color: #e1b5b6; }
+html form fieldset .field.error.active .selectbox-wrapper .selected, html form fieldset .field.error.active .ac_results .selected, body form fieldset .field.error.active .selectbox-wrapper .selected, body form fieldset .field.error.active .ac_results .selected { color: #a11c39; }
+html form fieldset .field.error.active .selectbox-wrapper .current, html form fieldset .field.error.active .ac_results .current, body form fieldset .field.error.active .selectbox-wrapper .current, body form fieldset .field.error.active .ac_results .current { background-color: #d07872; color: #2a0b14; }
+html form fieldset p.help, body form fieldset p.help { clear: both; margin: 0; padding: 0 0 20px 0; }
+html form p.submit, html form fieldset.submit, body form p.submit, body form fieldset.submit { text-align: right; padding: 20px 30px 20px 30px; }
+html form p.submit .confirmation, html form fieldset.submit .confirmation, body form p.submit .confirmation, body form fieldset.submit .confirmation { text-align: left; }
+html form p.submit p, html form fieldset.submit p, body form p.submit p, body form fieldset.submit p { float: left; line-height: 30px; }
+
+
+
+#content form { padding: 0 !important; }
+#content form.panel-body { padding: 0 !important; }
+#content { width: 600px; padding-top: 40px; margin: 0 auto 40px; }
+#content .panel { margin-bottom: 20px; background-color: #22232c; -moz-border-radius: 14px; -webkit-border-radius: 14px; -moz-box-shadow: 2px 2px 7px #151515; -webkit-box-shadow: 2px 2px 7px #151515; }
+#content .panel .panel-body { padding: 20px; }
+#content .panel .help { float: right; padding-top: 10px; padding-right: 10px; }
+#content .panel h2 { color: #8d79f2; background-color: #1f2028; padding: 10px 10px 10px 20px; margin: 0; font-weight: normal; font-family: "Hybrea", sans-serif; letter-spacing: 1px; -moz-border-radius-topright: 14px; -webkit-border-top-right-radius: 14px; -moz-border-radius-topleft: 14px; -webkit-border-top-left-radius: 14px; }
+#content .panel .intro { padding-top: 5px; padding-left: 10px; }
+#content .panel .intro h4 { font-weight: normal; color: white; }
+#content .panel .intro p a { color: #7f95ff; }
+#content .panel .part { overflow: hidden; display: inline-block; border-top-width: 4px; border-top-color: #1f2028; border-top-style: solid; padding-top: 20px; padding-bottom: 20px; }
+#content .panel .part { display: block; }
+#content .panel .part:first-child { padding-top: 0; border-top-style: none; }
+#content .panel .part:last-child { padding-bottom: 0; }
+#content .panel .part h3 { color: white; font-weight: normal; width: 160px; float: left; }
+#content .panel .part p, #content .panel .part ul { margin-left: 180px; }
+#content .panel .part p.help { float: left; padding-top: 0; }
+#content .panel #redeemed { color: #bff740; }
+#content .panel .change-password input.submit { margin-left: 165px; }
+#content .panel .app-rename input.submit { margin-left: 10px; }
+#content .panel-small { width: 400px; margin: 0 auto; }
+#content .panel-mid { width: 500px; margin: 0 auto; }
+#content #notfound h2 { color: #a11c39; }
+ul.submenu { overflow: hidden; display: inline-block; padding-top: 5px; }
+ul.submenu { display: block; }
+ul.submenu li { display: block; float: left; }
+ul.submenu li a { color: #82859e; background-color: #1f2028; -moz-border-radius: 14px; -webkit-border-radius: 14px; padding: 5px 24px 5px 24px; margin-right: 5px; display: block; text-decoration: none; }
+ul.submenu li a:hover { color: #eeeeee; text-decoration: none; }

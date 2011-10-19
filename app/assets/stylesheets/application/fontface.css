@@ -1,0 +1,14 @@
+@font-face { font-family: "Corbel Bold"; font-style: normal; font-weight: normal; src: url("/fonts/corbelbold-webfont.eot?") format("eot"), url("/fonts/corbelbold-webfont.woff") format("woff"), url("/fonts/corbelbold-webfont.ttf") format("truetype"), url("/fonts/corbelbold-webfont.svg#webfontlzzpxzyu") format("svg"); }
+
+@font-face { font-family: "Corbel"; font-style: normal; font-weight: normal; src: url("/fonts/corbel-webfont.eot?") format("eot"), url("/fonts/corbel-webfont.woff") format("woff"), url("/fonts/corbel-webfont.ttf") format("truetype"), url("/fonts/corbel-webfont.svg#webfontO0rfJpd7") format("svg"); }
+
+@font-face { font-family: "Hybrea"; font-style: normal; font-weight: normal; src: url("/fonts/hybrealight-webfont.eot?") format("eot"), url("/fonts/hybrealight-webfont.woff") format("woff"), url("/fonts/hybrealight-webfont.ttf") format("truetype"), url("/fonts/hybrealight-webfont.svg#webfontHioEustJ") format("svg"); }
+
+@font-face { font-family: "Hybrea Bold"; font-style: normal; font-weight: normal; src: url("/fonts/hybrea-webfont.eot?") format("eot"), url("/fonts/hybrea-webfont.woff") format("woff"), url("/fonts/hybrea-webfont.ttf") format("truetype"), url("/fonts/hybrea-webfont.svg#webfonto3DdN6lX") format("svg"); }
+
+@font-face {
+  font-family: 'Nova Square';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Nova Square'), local('NovaSquare'), url('/fonts/NovaSquare.woff') format('woff');
+}

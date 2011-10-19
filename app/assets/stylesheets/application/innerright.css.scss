@@ -1,0 +1,83 @@
+#innerright{
+  position:absolute;
+  top:4px;
+  right:15px;
+  ul {
+      display: inline-block;
+      float: right;
+      list-style-type: none;
+      overflow: hidden;
+      padding: 10px;
+  }
+  ul {
+      display: block;
+  }
+  ul li {
+      float: left;
+      margin-left: 10px;
+  }
+  ul li:first-child {
+      margin-left: 0;
+  }
+  ul li {
+      border-left: 2px solid #534890;
+      font-size: 14px;
+      padding-left: 10px;
+  }
+  ul li:first-child, ul li#account_login {
+      border: medium none;
+      margin-left: 0;
+      padding-left: 0;
+  }
+  ul li a.active {
+      color: #BFF740;
+  }
+  ul li a.active:hover {
+      color: #BFF740;
+  }
+  ul.account-links {
+      background-color: #231D40;
+      border-radius: 7px 7px 7px 7px;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-top:3px;
+      height:18px;
+  }
+  ul.account-links a {
+      color: #45A4FF;
+  }
+  ul.account-links a:hover {
+      color: #74D0F4;
+  }
+  ul.account-links a.active {
+      color: #BFF740;
+  }
+  ul.account-links a.active:hover {
+      color: #BFF740;
+  }
+  ul.submenu {
+      display: inline-block;
+      overflow: hidden;
+      padding-top: 5px;
+  }
+  ul.submenu {
+      display: block;
+  }
+  ul.submenu li {
+      display: block;
+      float: left;
+  }
+  ul.submenu li a {
+      background-color: #1F2028;
+      border-radius: 14px 14px 14px 14px;
+      color: #82859E;
+      display: block;
+      margin-right: 5px;
+      padding: 5px 24px;
+      text-decoration: none;
+  }
+  ul.submenu li a:hover {
+      color: #EEEEEE;
+      text-decoration: none;
+  }
+}

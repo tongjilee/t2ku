@@ -1,0 +1,64 @@
+$main-color: #9587FB;
+$idle-color: #9390AB;
+
+.cm-s-t2math{
+
+  span.CodeMirror-selected {
+     background: #a8f !important; 
+  }
+  .CodeMirror-gutter {
+    background: #0a001f; border-right: 1px solid #aaa;
+  }
+  .CodeMirror-gutter-text {
+    color: #f8f8f8;
+  }
+  .CodeMirror-cursor {
+    border-left: 1px solid white !important;
+  }
+  span.cm-verb {color: #599eff;}
+  span.cm-math {color:$idle-color;font-style:italic;}
+  span.cm-keyword {color: #767;}
+  span.cm-comment {color: #a86;}
+  span.cm-complement {color:$idle-color;}
+  span.cm-adjective {color: $idle-color;}
+  span.cm-end_of_sentence,
+  span.cm-comma_of_sentence,
+  span.cm-error-unfinished{
+    color:$idle-color;
+  }
+  span.cm-error,
+  span.cm-error-undefined-verb,
+  span.cm-error-let-expecting-be,
+  span.cm-error-let-expecting-object,
+  span.error-number-in-text,
+  span.error-no-special-chars,
+  span.cm-error-error-math-mismatch{
+    color: #f00;
+  }
+  span.cm-error-internal{
+    color:white;
+    background-color:red;
+  }
+
+  span.cm-dollar {color: $main-color;}
+  span.cm-operator {color: #B3FC38;}
+  span.cm-parentheses {color: #077;}
+/*  span.cm-bracket {color: #cc7;}*/
+  span.cm-braces{color: #cc7;}
+  span.cm-variable {color: $main-color;}
+  span.cm-variable-2 {color: #05a;}
+  span.cm-variable-3 {color: #30a;}
+  span.cm-property {color: black;} 
+
+
+
+  span.cm-tag {color: #3a3;}
+
+  span.cm-atom {color: #219;}
+  span.cm-number {color: #164;}
+  span.cm-def {color: #00f;}
+  span.cm-string {color: #a22;}
+  span.cm-meta {color: #555;}
+  span.cm-qualifier {color: #a50;}
+  span.cm-builtin {color: #170;}
+}

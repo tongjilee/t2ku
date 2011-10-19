@@ -1,0 +1,96 @@
+#big_logo
+  = image_tag "/images/logo_up.#{I18n.locale}.png",id:'logo_up'
+  %br
+  = link_to image_tag('/images/logo.png'),'/',class:'special',id:'logo'
+  %br
+  = image_tag '/images/logo_down.png',id:'logo_down'
+
+#portal
+  #portal_links
+    .right
+      =image_tag "/images/nav-highlight-vertical.png",id:'nav-highlight-vertical'
+    .right
+      %p#p_1.selected
+        %span= tt('inquiry1')
+        %br
+        = tt('inquiry11')
+      %p#p_2
+        %span= tt('inquiry2')
+        %br
+        = tt('inquiry22')
+  #portal_main
+    #portal_main_1
+      #portal_main_1_1
+        #ajax_failure.ui-widget.afailure{style:'display:none'}
+          .ui-state-error.ui-corner-all{style:'padding: 0 .7em;'}
+            %p
+              %span.ui-icon.ui-icon-alert{style:'float: left; margin-right: .3em;'}
+              %strong
+                = tt('failed')+':'
+              = tt('ajax_failure')+'.'
+            %p#ajax_failure_content
+        #parse_result.ui-widget.afailure{style:'display:none'}
+          .ui-state-error.ui-corner-all{style:'padding: 0 .7em;'}
+            %p
+              %span.ui-icon.ui-icon-alert{style:"float: left; margin-right: .3em"}
+              %strong{style:'line-height:17px'}
+                = tt('parse_error')+':'
+            %ol#please_rectify
+        =form_for @task do |f|
+          - @task.description ||= @randoms[Random.new.rand(0..@randoms.size-1)]
+          = f.text_area :description, :id=>'text_desc_textarea',:class=>'text_desc_textarea_cla',:rows=>@task.description.split("\n").count
+          .buttons
+            %a{href:'#',class:"special go_button",id:'qiuzheng_button'}
+              = tt('qiuzheng')
+            %a{href:'#',class:"special js_button",id:'preview_button'}
+              = tt('qiuzheng0')
+            %br{style:'clear:both'}
+      #portal_main_1_2(style="display:none")
+    #portal_main_2(style="display:none")
+      =form_tag '/q',:id=>'query_form',:autocomplete=>"off" do
+        #query_wrapper
+          =text_field_tag 'query','',id:'query_field'
+        #keyboard
+          .leftcol
+            #keyboard_show
+            #keyboard_new
+            #keyboard_edit
+            #keyboard_search
+            #keyboard_definition
+            #keyboard_theorem
+            #keyboard_problem
+            #keyboard_mission
+            #keyboard_of
+            #keyboard_no
+            #keyboard_about
+            #keyboard_proof
+            #keyboard_symbol
+            #keyboard_constructor
+            #keyboard_adjective
+            #keyboard_predicate
+          .rightcol
+            #keyboard_c
+            #keyboard_pm
+            #keyboard_div
+            #keyboard_times
+            #keyboard_7
+            #keyboard_8
+            #keyboard_9
+            #keyboard_minus
+            #keyboard_4
+            #keyboard_5
+            #keyboard_6
+            #keyboard_plus
+            %blockquote.rightleftcol
+              #keyboard_1
+              #keyboard_2
+              #keyboard_3
+              #keyboard_0
+              #keyboard_point
+            %blockquote.rightrightcol
+              #keyboard_go
+            = clear
+          = clear
+= content_for :butt do
+  = javascript_include_tag 'code'
+  = javascript_include_tag 'app'

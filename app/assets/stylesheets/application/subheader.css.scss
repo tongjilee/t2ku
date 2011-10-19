@@ -1,0 +1,287 @@
+#subheader {
+    overflow: hidden;
+    background: none repeat scroll 0 0 #1F2028;
+    border-bottom: 1px solid #22232C;
+    ol, ul {
+        list-style: none outside none;
+    }
+}
+#subheader .app {
+    background: url("/assets/subheader_triangle.png") no-repeat scroll right top transparent;
+    float: left;
+    margin: 0 22px 0 0;
+    padding: 0 26px 0 0;
+}
+#subheader .app h1 {
+    background: none repeat scroll 0 0 #191A20;
+    color: #CCCCCC;
+    font-size: 19px;
+    font-weight: normal;
+    line-height: 49px;
+    padding: 2px 30px 0;
+}
+#subheader .submenu {
+    margin: 6px 0 0;
+}
+#subheader .submenu li {
+    float: left;
+    font-size: 14px;
+    margin: 0 5px 0 0;
+}
+#subheader .submenu li a:link, #subheader .submenu li a:visited {
+    color: #AAAAAA;
+    display: block;
+    padding: 8px 24px;
+}
+#subheader .submenu li a:hover, #subheader .submenu li a:active {
+    color: white;
+}
+#subheader .submenu li.active a:link, #subheader .submenu li.active a:visited {
+    background: none repeat scroll 0 0 #1A1A1A;
+    border-radius: 14px 14px 14px 14px;
+    color: #BFF740;
+}
+
+
+
+
+
+
+
+
+
+#subheader .pop_trigger {
+    background-color: #33313B;
+    background-image: url("/assets/addon-menu-trigger-background.png");
+    background-position: center 0;
+    background-repeat: repeat-x;
+    border-radius: 14px 14px 14px 14px;
+    box-shadow: 0 0 3px #1A1A1A;
+    display: block;
+    float: right;
+    font-size: 14px;
+    margin-right: 25px;
+    padding: 0;
+    vertical-align: baseline;
+}
+#subheader .pop_trigger a {
+    background-image: url("/assets/addon-menu-trigger-arrow.png");
+    background-position: right 3px;
+    background-repeat: no-repeat;
+    color: #CCCCCC;
+    display: inline-block;
+    padding: 5px 40px 5px 20px;
+    text-decoration: none;
+    vertical-align: baseline;
+}
+#subheader .pop_trigger a:hover {
+    background-position: right -28px;
+    color: white;
+    text-decoration: none;
+}
+#subheader .pop_trigger.pop_active {
+    background-color: #393342;
+    background-position: center -28px;
+}
+#subheader .pop_trigger.pop_active a {
+    background-position: right -58px;
+    color: #D6CEFF;
+}
+#subheader .pop_trigger.pop_current {
+    background-color: #383842;
+    background-image: url("/assets/addon-menu-trigger-background-current.png");
+    background-position: right 0;
+    background-repeat: no-repeat;
+    color: white;
+}
+#subheader .pop_trigger.pop_current a {
+    color: #BEE46D;
+    padding: 5px 60px 5px 20px;
+}
+#subheader .pop_trigger.pop_current a:hover {
+    color: #F1FDC9;
+}
+#subheader .pop_trigger.pop_current.pop_active {
+    background-position: right -26px;
+}
+#subheader .pop_trigger.pop_current.pop_active a {
+    color: #D6CEFF;
+}
+#subheader .pop_content {
+    margin-top: 11px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+}
+#subheader .pop_content .pop_content_container {
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    bottom: 10px;
+    box-shadow: 0 0 12px black;
+    margin-left: 15px;
+    margin-right: 25px;
+    position: absolute;
+    right: 0;
+}
+#subheader .pop_content .pop_content_container .pop_content_shadow {
+    background-image: url("/assets/addon-menu-shadow.png");
+    background-position: center top;
+    background-repeat: repeat-x;
+    height: 10px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 15000;
+}
+#subheader .pop_content .pop_content_container .addons {
+    background-color: #32313A;
+    background-image: url("/assets/addon-menu-background.png");
+    background-position: right top;
+    background-repeat: repeat-x;
+    border-left: 1px solid #504E59;
+    border-right: 1px solid #504E59;
+    padding: 13px 10px 10px;
+}
+#subheader .pop_content .pop_content_container .addons p {
+    color: #E6E6E6;
+    margin-bottom: 2px;
+    padding: 10px;
+    white-space: nowrap;
+}
+#subheader .pop_content .pop_content_container .addons .none {
+    text-align: center;
+}
+#subheader .pop_content .pop_content_container .addons .addon {
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    vertical-align: bottom;
+}
+#subheader .pop_content .pop_content_container .addons .addon a, #subheader .pop_content .pop_content_container .addons .addon span {
+    display: block;
+}
+#subheader .pop_content .pop_content_container .addons .addon a {
+    background-position: left 0;
+    background-repeat: no-repeat;
+    color: #D6CEFF;
+    line-height: 25px;
+    margin-right: 12em;
+    padding-left: 30px;
+    text-decoration: none;
+}
+#subheader .pop_content .pop_content_container .addons .addon span {
+    color: #C2BFE4;
+    display: inline-block;
+    font-size: 10px;
+    line-height: 9px;
+    padding-top: 1px;
+    position: absolute;
+    right: 10px;
+    text-align: right;
+    text-transform: uppercase;
+    top: 18px;
+    width: 12em;
+}
+#subheader .pop_content .pop_content_container .addons .addon span:after {
+    clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+#subheader .pop_content .pop_content_container .addons .addon span {
+    display: block;
+}
+#subheader .pop_content .pop_content_container .addons .addon:hover {
+    background-color: #4A455A;
+}
+#subheader .pop_content .pop_content_container .addons .addon:hover a {
+    background-position: left -25px;
+}
+#subheader .pop_content .pop_content_container .addons .addon:hover a, #subheader .pop_content .pop_content_container .addons .addon:hover span {
+    color: #E9E6FE;
+}
+#subheader .pop_content .pop_content_container .addons .addon.installing {
+    background-color: #434755;
+}
+#subheader .pop_content .pop_content_container .addons .addon.installing a {
+    color: #CCE8FF;
+}
+#subheader .pop_content .pop_content_container .addons .addon.installing span {
+    color: #82A7C5;
+}
+#subheader .pop_content .pop_content_container .addons .addon.installing:hover {
+    background-color: #434755;
+    cursor: default;
+}
+#subheader .pop_content .pop_content_container .addons .addon.installing:hover a {
+    background-position: left 0;
+    color: #CCE8FF;
+    cursor: default;
+}
+#subheader .pop_content .pop_content_container .addons .addon.notconfigured {
+    color: #777777;
+}
+#subheader .pop_content .pop_content_container .addons .addon.notconfigured a {
+    background-position: left -50px;
+    color: #777777;
+}
+#subheader .pop_content .pop_content_container .addons .addon.notconfigured span {
+    background-image: url("/assets/addon-menu-configure-arrow.png");
+    background-position: right 0;
+    background-repeat: no-repeat;
+    color: #777777;
+    padding-right: 24px;
+}
+#subheader .pop_content .pop_content_container .addons .addon.notconfigured:hover a {
+    background-position: left -25px;
+    color: #DDDDDD;
+}
+#subheader .pop_content .pop_content_container .addons .addon.notconfigured:hover span {
+    background-position: right -15px;
+    color: #DDDDDD;
+}
+#subheader .pop_content .pop_content_container .addons .addon.current a {
+    background-position: left -26px;
+    color: #BEE46D;
+}
+#subheader .pop_content .pop_content_container .addons .addon.current:hover a {
+    color: #F1FDC9;
+}
+#subheader .pop_content .pop_content_container .getmore {
+    background-color: #32303A;
+    background-image: url("/assets/addon-menu-getmore-background.png");
+    background-position: center top;
+    background-repeat: repeat-x;
+    border: 1px solid #504E59;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    color: #D6CEFF;
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+    text-decoration: none;
+}
+#subheader .pop_content .pop_content_container .getmore span {
+    background-image: url("/assets/addon-menu-getmore-button.png");
+    background-position: left -6px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    line-height: 30px;
+    padding-left: 37px;
+    padding-right: 15px;
+    white-space: nowrap;
+}
+#subheader .pop_content .pop_content_container .getmore:hover {
+    background-color: #24373A;
+    background-image: url("/assets/addon-menu-getmore-background-hover.png");
+    border: 1px solid #345356;
+    color: #CCE8FF;
+}
+#subheader .pop_content .pop_content_container .getmore:hover span {
+    background-position: left -42px;
+}

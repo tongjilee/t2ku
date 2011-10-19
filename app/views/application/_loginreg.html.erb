@@ -1,0 +1,45 @@
+<div id="loginreg">
+
+	<div id="login-form" class="floating_dialog" style="display:none">
+		<%= form_tag new_user_session_path,:id=>'login_form',:style=>'margin-top:-14px' do %>
+			<fieldset>
+				<label for="user_email">E-mail</label>
+				<input type="text" class="text ui-widget-content ui-corner-all" value="" id="user_email_log" name="user[email]" onkeypress="if(event.keyCode==13){$('#user_password_log').focus();}">
+				<label for="user_password"><%= tt('loginreg.passwd') %></label>
+				<input type="password" class="text ui-widget-content ui-corner-all" value="" id="user_password_log" name="user[password]" onkeypress="if(event.keyCode==13){$('#login_form').submit();}">
+			</fieldset>
+		<% end %>
+	</div>
+
+	<div id="reg-form" class="floating_dialog" style="display:none">
+	  <div id="reg_display_when_success" style="display:none">
+	    <div style="text-align:center;margin:21px 0">
+	      <%= image_tag 'suc.png' %>
+	    </div>
+	    <p style="line-height: 22px;">
+	      <%= tt('loginreg.reg_ok_msg').html_safe %>
+	      <%=link_to tt('loginreg.resend_confirm'),new_user_confirmation_path%>
+	    </p>
+	  </div>
+	  <div id="reg_normal_stuff">
+      <div class="ui-widget afailure" id="error_reg" style="margin: 2px 0 22px 0;display:none">
+        <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+          <p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+          <strong><%= tt('error') %>:</strong> <span id="error_reg_content" style="line-height:18px"></span></p>
+        </div>
+      </div>
+      <%= image_tag 'reg_ajax_wait.gif',:id=>"spinningWheel_reg",:style=>'display:none;' %>
+  		<%= form_for @new_user,:url=>'/ajax/create_user',:remote=>true,:html=>{:id=>'reg_form',:style=>'margin-top:-10px'} do %>
+  			<fieldset>
+  				<label for="user_email">E-mail</label>
+  				<input type="text" class="text ui-widget-content ui-corner-all" value="" id="user_email" name="user[email]">
+  				<label for="user_password"><%= tt('loginreg.passwd') %></label>
+  				<input type="password" class="text ui-widget-content ui-corner-all" value="" id="user_password" name="user[password]">
+  				<label for="user_password_confirmation"><%= tt('loginreg.passwd_confirm') %></label>
+  			  <input type="password" class="text ui-widget-content ui-corner-all" value="" id="user_password_confirmation" name="user[password_confirmation]">
+  			</fieldset>
+  		<% end %>
+  	</div>
+	</div>
+
+</div>

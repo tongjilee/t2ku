@@ -1,0 +1,7 @@
+<p><%= I18n.t('t2ku.confirm_mail.p1') %> <%= @resource.email %>!</p>
+
+<p><%= I18n.t('t2ku.confirm_mail.p2') %></p>
+
+<p><%= link_to I18n.t('t2ku.confirm_mail.p3'), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+
+<p>If you have any questions, you can reply this mail to ask. (Yeah, that's right, this is not a non-reply mail!)</p>

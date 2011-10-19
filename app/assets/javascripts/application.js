@@ -6,4 +6,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require json2
+//= require_tree ./application

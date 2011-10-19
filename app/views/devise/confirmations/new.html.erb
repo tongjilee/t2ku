@@ -1,0 +1,21 @@
+<%= render :partial=>'devise/shared/head' %>
+<div id="login_reg_box">
+<div id="loginbox">
+<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+	<h1><%= tt('loginreg.resend_confirm_mail') %></h1>
+	  <div class="formbody">
+      	<label for="user_email">
+        	E-mail</label>
+					<%= f.text_field :email,:tabindex=>1,:class=>"text" %>
+      	
+
+				<div style="text-align:center">
+      		<label class="submit_btn">
+						<%= f.submit tt('loginreg.resend_confirm_mail'),:onclick=>"this.disabled=true;this.value='处理中，请等待';$('#user_new').submit();return false;"%>
+	      	</label>
+				</div>
+	  </div>
+<% end %>
+		</div>
+		<%= render file:'devise/shared/_links' %>
+		</div>

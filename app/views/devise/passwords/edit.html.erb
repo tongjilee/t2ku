@@ -1,0 +1,27 @@
+<%= render :partial=>'devise/shared/head' %>
+<div id="login_reg_box">
+<div id="loginbox">
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+	<h1><%= tt('loginreg.passwd_forgot_commit') %></h1>
+	  <div class="formbody">
+      	<%= f.hidden_field :reset_password_token %>
+      	<label for="user_password">
+        	<%= tt('loginreg.passwd_new') %></label>
+					<%= f.password_field :password,:tabindex=>2,:class=>"text" %>
+
+
+      	<label for="user_password_confirmation">
+        	<%= tt('loginreg.passwd_confirm') %></label>
+					<%= f.password_field :password_confirmation,:tabindex=>3,:class=>"text" %></p>
+
+
+				<div style="text-align:center">
+      		<label class="submit_btn">
+						<%= f.submit tt('loginreg.passwd_forgot_commit')%>
+	      	</label>
+				</div>
+	  </div>
+<% end %>
+		</div>
+		<%= render file:'devise/shared/_links' %>
+		</div>
