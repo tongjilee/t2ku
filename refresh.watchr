@@ -1,0 +1,1 @@
+watch( 'app/*' ) { |m| system('autorefresh myproject') }
