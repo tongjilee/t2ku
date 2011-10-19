@@ -35,8 +35,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: t2ku_production
+  database: t2ku
   pool: 5
   username: root
-  password:
+  password: XApRJZPX2RaWL8D2
   socket: /tmp/mysql.sock
