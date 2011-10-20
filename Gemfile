@@ -39,4 +39,3 @@ gem 'devise'
 gem 'inherited_resources'
 gem 'haml'
 
-gem 'autorefresh'

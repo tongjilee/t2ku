@@ -12,7 +12,6 @@
   <meta name="author" content="">
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />  
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-  <%=raw AutoRefresh.channel('t2ku') %>
   <%= stylesheet_link_tag    "application" %>
 	<script type="text/x-mathjax-config">
 	   MathJax.Hub.Config({
@@ -39,7 +38,7 @@
 	  <%= render 'footer'%>
   </footer>
   <%= yield :butt %>
-  <%= javascript_include_tag "jquery-ui-1.8.16.custom.min.js" %>
+  <script src="http://cdn.t2ku.org/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
 </body>
 </html>
 
