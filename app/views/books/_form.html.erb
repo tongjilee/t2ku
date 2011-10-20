@@ -1,0 +1,48 @@
+
+	<%= form_for(@book) do |f| %>		
+
+		<div class="panel" id="app-info">
+		  <div class="panel-body">
+		    <div class="part app-rename">
+		      <h3>Book Title</h3>
+					<p id="rename">
+						<%= f.text_field :title %>
+					</p>
+
+		    </div>
+		    <div class="part heroku-url">
+		      <h3>Book URL</h3>
+		      <p><span style="color:#C9C3E5"><%= "#{request.base_url}/books/" %><span id="book_url_to_be"></span></span></p>
+		    </div>
+		
+		    <div class="part">
+		      <h3>Short Description</h3>
+		        <p>
+		        	<%= f.text_area :description,:style=>"height:100px" %>
+		        </p>
+
+		    </div>
+
+	  		<div class="part app-destroy">
+					<%= f.submit class:'submit' %>
+	  		</div>
+
+		  </div>
+		</div>
+
+	<% end %>
+
+
+
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function () {
+	$('#book_title').keyup(function(){
+		ret = this.value;
+		ret = ret.toLowerCase();
+		ret = ret.split(' ').join('_');
+		$("#book_url_to_be").text(ret)
+	});
+});
+</script>
+

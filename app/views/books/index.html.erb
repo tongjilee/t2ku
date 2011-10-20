@@ -1,0 +1,48 @@
+<div class="myapps-index">
+<div id="content" style="width: 980px;">
+
+<div class="panel" id="app-index">
+  <div class="panel-body">
+    <form id="searchbar">
+      <fieldset class="part">
+        <h2 id="searchcount">Books</h2>
+				<div class="field">
+				          <label>
+				            <a class="viewall" href="">View All</a>
+				            <span class="separator"> | </span>
+				            Filter by Title
+				          </label>
+				          <input type="text" class="text" id="livesearch">
+        </div>
+	     </fieldset>
+    </form>
+
+<% @books.each do |book| %>      
+        <div class="user_app part" onclick="window.location.href='<%= j book_path(book) %>'">
+          <a class="resources" href="myapps/cnukejian">
+            <span class="database"></span>
+          </a>
+          <div class="app_name">
+            <h3><%= link_to book.title,book %></h3>
+          </div>
+          <ul class="submenu">
+
+						<li><a href="#" onclick="event.stopPropagation()"><%= book.problems.count %> Problems</a></li>
+						<li><a href="#" onclick="event.stopPropagation()"><%= book.theorems.count %> Theorems</a></li>
+            <li><a href="#" onclick="event.stopPropagation()"><%= book.definitions.count %> Definitions</a></li>
+
+						<li></li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+<%end %>      
+
+      <div id="searchnotfound">
+        <h3>You can start a book and edit it together with other people!&nbsp;&nbsp;<a class="viewall" href="<%= new_book_path %>">New Book<span> →</span></a></h3>
+      </div>
+    
+  </div>
+</div>
+
+</div>
+</div>

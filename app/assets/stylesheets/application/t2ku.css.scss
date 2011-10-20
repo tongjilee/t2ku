@@ -79,7 +79,7 @@ code.other {
 }
 code.with_background {
 	overflow: auto;
-    background: url("/assets/bgcode.gif") repeat scroll 0 0 transparent;
+    background: url("/images/bgcode.gif") repeat scroll 0 0 transparent;
     border-color: #F0F0F0 #F0F0F0 #F0F0F0 #FF0066;
     border-style: solid;
     border-width: 1px 1px 1px 6px;
@@ -245,7 +245,7 @@ code.with_background {
   text-weight:normal;
 	margin-top:18px;
 	margin-bottom:5px;
-  background: url("/assets/page_white_text.jpg") no-repeat scroll 0 0 transparent;
+  background: url("/images/page_white_text.jpg") no-repeat scroll 0 0 transparent;
 	padding-left			: 20px;
   a{
     color: #9782FF;
@@ -336,7 +336,7 @@ code.with_background {
 .somethingSpan{
 	@include frank-font;
 	line-height: 18px;
-	background: url("/assets/MathOutputSpan.gif") no-repeat scroll 0 0 transparent;
+	background: url("/images/MathOutputSpan.gif") no-repeat scroll 0 0 transparent;
 	text-align:left;
 	padding-left:20px;
 	padding-bottom:5px;
@@ -590,7 +590,7 @@ input:focus, textarea:focus {
 	float:left;
 	padding: 8px 21px 8px 0;
 	margin-right:12px;
-	background: url("/assets/breadcrumb_separator2.png") no-repeat scroll 100% 50% transparent;
+	background: url("/images/breadcrumb_separator2.png") no-repeat scroll 100% 50% transparent;
 }
 #chrome-header div.last{
 	background:none !important;
@@ -669,7 +669,7 @@ input:focus, textarea:focus {
     z-index: 100;
 }
 #viewer-neck {
- 	background: url("/assets/defmainheadbg.png") repeat-x scroll left top transparent;
+ 	background: url("/images/defmainheadbg.png") repeat-x scroll left top transparent;
     color: #333333;
     font-size: 13px;
     height: 53px;
@@ -697,7 +697,7 @@ input:focus, textarea:focus {
 .lhn-recommendations-minimize{
 	float:right;
 	margin: 2px 7px 0 0;
-	background: url("/assets/2077950742-lhn-sprite.png") no-repeat scroll 0 -16px transparent;
+	background: url("/images/2077950742-lhn-sprite.png") no-repeat scroll 0 -16px transparent;
     cursor: pointer;
     height: 12px;
     width: 12px;

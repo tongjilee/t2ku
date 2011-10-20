@@ -28,7 +28,7 @@
 <body class="<%= params[:controller] %>" id="<%= pos_signature %>">
 	<header>
 	  <%= render 'headnav' %>
-	  <%# render 'loginreg' if !user_signed_in? %>
+	  <%= render 'loginreg' if !user_signed_in? %>
 	  <%= alert_or_notice(flash[:alert],flash[:notice]) %>
 	</header>
 
@@ -38,6 +38,7 @@
 	  <%= render 'footer'%>
   </footer>
   <%= yield :butt %>
+  <%= javascript_include_tag 'app'%>
   <script src="http://cdn.t2ku.org/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
 </body>
 </html>

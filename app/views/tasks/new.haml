@@ -91,9 +91,10 @@
               #keyboard_go
             = clear
           = clear
-= content_for :butt do
+
+- content_for :butt do
   = javascript_include_tag 'code'
-  = javascript_include_tag 'app'
+
 :javascript
   jQuery(function() {
     window.App_MissionLaunch = new T2Ku.Views.MissionLaunch({

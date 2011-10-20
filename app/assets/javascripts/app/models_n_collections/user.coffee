@@ -3,6 +3,8 @@ class T2Ku.Models.User extends Backbone.Model
   urlRoot:'/users'
   validate:(attrs)->
     unless attrs.no_validation
+      unless attrs.name.length>=3 and attrs.name.length<=20
+        return tt('loginreg.badlength("User Name",3,20)')
       unless attrs.email.length>=6 and attrs.email.length<=80
         return tt('loginreg.badlength("Email",6,80)')
       unless @regexp.test(attrs.email)

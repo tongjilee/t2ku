@@ -2,11 +2,10 @@
 	font-size:12px !important;
 }
 .dialog-form-error {
-  background: url("/assets/ui-bg_glass_95_fef1ec_1x400.png") repeat-x scroll 50% 50% #FEF1EC;
+  background: url("/images/ui-bg_glass_95_fef1ec_1x400.png") repeat-x scroll 50% 50% #FEF1EC;
   border: 1px solid #CD0A0A;
   color: #CD0A0A;
 }
 .ui-widget-overlay{
-  background:url("/assets/ui-bg_flat_0_000000_40x100.png") repeat-x scroll 50% 50% #000;
-  opacity:0.6;
+  background:transparent;
 }

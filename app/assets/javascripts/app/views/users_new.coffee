@@ -20,6 +20,7 @@ class T2Ku.Views.UsersNew extends Backbone.View
     $('#error_reg').hide()
     @options.model.unset("error")
     params={
+      name: e.target["user[name]"].value
       email: e.target["user[email]"].value
       password: e.target["user[password]"].value
       password_confirmation: e.target["user[password_confirmation]"].value
@@ -28,6 +29,7 @@ class T2Ku.Views.UsersNew extends Backbone.View
       beforeSend:(jqXHR, settings)=>
         $('button.ui-button').attr('disabled','disabled')
         $('#spinningWheel_reg').show()
+        $('#reg-form').height($('#spinningWheel_reg').height()+230)
       complete:(jqXHR, textStatus)=>
         $('button.ui-button').removeAttr('disabled')
         $('#spinningWheel_reg').hide()
@@ -42,4 +44,5 @@ class T2Ku.Views.UsersNew extends Backbone.View
   updateTips:(t)->
     $('#error_reg').show()
     $('#error_reg_content').text(t)
+    $('#reg-form').height($('#error_reg').height()+230)
     MathJax.Hub.Queue(["Typeset",MathJax.Hub,$('#error_reg_content')[0]])

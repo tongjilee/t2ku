@@ -7,7 +7,7 @@
     }
 }
 #subheader .app {
-    background: url("/assets/subheader_triangle.png") no-repeat scroll right top transparent;
+    background: url("/images/subheader_triangle.png") no-repeat scroll right top transparent;
     float: left;
     margin: 0 22px 0 0;
     padding: 0 26px 0 0;
@@ -52,7 +52,7 @@
 
 #subheader .pop_trigger {
     background-color: #33313B;
-    background-image: url("/assets/addon-menu-trigger-background.png");
+    background-image: url("/images/addon-menu-trigger-background.png");
     background-position: center 0;
     background-repeat: repeat-x;
     border-radius: 14px 14px 14px 14px;
@@ -65,7 +65,7 @@
     vertical-align: baseline;
 }
 #subheader .pop_trigger a {
-    background-image: url("/assets/addon-menu-trigger-arrow.png");
+    background-image: url("/images/addon-menu-trigger-arrow.png");
     background-position: right 3px;
     background-repeat: no-repeat;
     color: #CCCCCC;
@@ -89,7 +89,7 @@
 }
 #subheader .pop_trigger.pop_current {
     background-color: #383842;
-    background-image: url("/assets/addon-menu-trigger-background-current.png");
+    background-image: url("/images/addon-menu-trigger-background-current.png");
     background-position: right 0;
     background-repeat: no-repeat;
     color: white;
@@ -125,7 +125,7 @@
     right: 0;
 }
 #subheader .pop_content .pop_content_container .pop_content_shadow {
-    background-image: url("/assets/addon-menu-shadow.png");
+    background-image: url("/images/addon-menu-shadow.png");
     background-position: center top;
     background-repeat: repeat-x;
     height: 10px;
@@ -137,7 +137,7 @@
 }
 #subheader .pop_content .pop_content_container .addons {
     background-color: #32313A;
-    background-image: url("/assets/addon-menu-background.png");
+    background-image: url("/images/addon-menu-background.png");
     background-position: right top;
     background-repeat: repeat-x;
     border-left: 1px solid #504E59;
@@ -231,7 +231,7 @@
     color: #777777;
 }
 #subheader .pop_content .pop_content_container .addons .addon.notconfigured span {
-    background-image: url("/assets/addon-menu-configure-arrow.png");
+    background-image: url("/images/addon-menu-configure-arrow.png");
     background-position: right 0;
     background-repeat: no-repeat;
     color: #777777;
@@ -254,7 +254,7 @@
 }
 #subheader .pop_content .pop_content_container .getmore {
     background-color: #32303A;
-    background-image: url("/assets/addon-menu-getmore-background.png");
+    background-image: url("/images/addon-menu-getmore-background.png");
     background-position: center top;
     background-repeat: repeat-x;
     border: 1px solid #504E59;
@@ -267,7 +267,7 @@
     text-decoration: none;
 }
 #subheader .pop_content .pop_content_container .getmore span {
-    background-image: url("/assets/addon-menu-getmore-button.png");
+    background-image: url("/images/addon-menu-getmore-button.png");
     background-position: left -6px;
     background-repeat: no-repeat;
     display: inline-block;
@@ -278,7 +278,7 @@
 }
 #subheader .pop_content .pop_content_container .getmore:hover {
     background-color: #24373A;
-    background-image: url("/assets/addon-menu-getmore-background-hover.png");
+    background-image: url("/images/addon-menu-getmore-background-hover.png");
     border: 1px solid #345356;
     color: #CCE8FF;
 }

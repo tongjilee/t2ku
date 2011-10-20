@@ -14,7 +14,7 @@
 	<div id="reg-form" class="floating_dialog" style="display:none">
 	  <div id="reg_display_when_success" style="display:none">
 	    <div style="text-align:center;margin:21px 0">
-	      <%= image_tag 'suc.png' %>
+	      <%= image_tag '/images/suc.png' %>
 	    </div>
 	    <p style="line-height: 22px;">
 	      <%= tt('loginreg.reg_ok_msg').html_safe %>
@@ -28,9 +28,13 @@
           <strong><%= tt('error') %>:</strong> <span id="error_reg_content" style="line-height:18px"></span></p>
         </div>
       </div>
-      <%= image_tag 'reg_ajax_wait.gif',:id=>"spinningWheel_reg",:style=>'display:none;' %>
+      <div id="spinningWheel_reg" style="display:none;margin-bottom:20px">
+        <%= image_tag '/images/reg_ajax_wait.gif' %> Please wait ...
+      </div>
   		<%= form_for @new_user,:url=>'/ajax/create_user',:remote=>true,:html=>{:id=>'reg_form',:style=>'margin-top:-10px'} do %>
   			<fieldset>
+  			  <label for="user_name">User Name</label>
+  				<input type="text" class="text ui-widget-content ui-corner-all" value="" id="user_name" name="user[name]">
   				<label for="user_email">E-mail</label>
   				<input type="text" class="text ui-widget-content ui-corner-all" value="" id="user_email" name="user[email]">
   				<label for="user_password"><%= tt('loginreg.passwd') %></label>
@@ -43,3 +47,57 @@
 	</div>
 
 </div>
+<% content_for :butt do %>
+<script type="text/javascript" charset="utf-8">
+  jQuery(function() {
+    var buttons1, buttons2;
+    buttons1 = {};
+    buttons1[I18n.t('t2ku.loginreg.button11')] = function() {
+      return $("#login_form").submit();
+    };
+    buttons1[I18n.t('t2ku.loginreg.button12')] = function() {
+      return $(this).dialog("close");
+    };
+    buttons1[I18n.t('t2ku.loginreg.button13')] = function() {
+      return window.location.href = $("#login_link").attr('href');
+    };
+    buttons2 = {};
+    buttons2[I18n.t('t2ku.loginreg.button21')] = function() {
+      return $('#reg_form').submit();
+    };
+    buttons2[I18n.t('t2ku.loginreg.button22')] = function() {
+      return $(this).dialog("close");
+    };
+    buttons2[I18n.t('t2ku.loginreg.button23')] = function() {
+      return window.location.href = $("#reg_link").attr('href');
+    };
+    $("#login-form").dialog({
+      title: I18n.t('t2ku.loginreg.button11'),
+      autoOpen: false,
+      height: 220,
+      width: 380,
+      modal: true,
+      buttons: buttons1
+    });
+    $('#reg-form').dialog({
+      title: I18n.t('t2ku.loginreg.button21'),
+      autoOpen: false,
+      height: 330,
+      width: 350,
+      modal: true,
+      buttons: buttons2
+    });
+    window.App_UsersNew = new T2Ku.Views.UsersNew({
+      el: $('#reg-form')
+    });
+    $("#reg_link").click(function() {
+      $("#reg-form").dialog("open");
+      return false;
+    });
+    return $("#login_link").click(function() {
+      $("#login-form").dialog("open");
+      return false;
+    });
+  });
+</script>
+<%end %>
