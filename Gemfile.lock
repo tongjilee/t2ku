@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/jamesgolick/timeline_fu.git
+  revision: 45b695375045ff80e852dbe52ecbd600d64b14a5
+  specs:
+    timeline_fu (0.4.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -145,5 +151,6 @@ DEPENDENCIES
   pry
   rails (= 3.1.1)
   sass-rails (~> 3.1.4)
+  timeline_fu!
   turn
   uglifier (>= 1.0.3)
