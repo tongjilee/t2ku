@@ -6,6 +6,22 @@
   border: 1px solid #CD0A0A;
   color: #CD0A0A;
 }
-.ui-widget-overlay{
-  background:transparent;
+.floating_dialog label, input{
+    display: block;
+}
+.floating_dialog input.text {
+    margin-bottom: 12px;
+    padding: 0.4em;
+    width: 95%;
+}
+.validateTips {
+    border: 1px solid transparent;
+    font-size: 13px;
+    line-height:18px;
+    padding: 8px;
+}
+.floating_dialog fieldset {
+    border: 0 none;
+    margin-top: 16px;
+    padding: 0;
 }

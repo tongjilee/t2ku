@@ -9,7 +9,7 @@
 body {
     font-family: sans-serif;
     font-size: 100%;
-    background-color: #1E212F;
+    background-color: #1B1B24;
     color: #000;
     margin: 0;
     padding: 0;
@@ -35,6 +35,7 @@ div.body {
 }
 
 div.footer {
+    background-color: #1E212F;
     color: #ffffff;
     width: 100%;
     padding: 9px 0 9px 0;

@@ -12,7 +12,7 @@
        More info: h5bp.com/b/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title></title>
+  <title><%= @book.title %> - T2Ku</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -23,6 +23,7 @@
 
   <!-- CSS: implied media=all -->
   <!-- CSS concatenated and minified via ant build script-->
+  <%= stylesheet_link_tag "pre_application" %>
   <%= stylesheet_link_tag 'bookview' %>
   <!-- end CSS-->
 
@@ -31,41 +32,16 @@
   <!-- All JavaScript at the bottom, except for Modernizr / Respond.
        Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
        For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
-
+  <%= javascript_include_tag "application" %>
 </head>
-
-
-
-
-
-
-
 <body>
-  <div class="related">
-    <h3>Navigation</h3>
-    <ul>
-      <li class="right" style="margin-right: 10px">
 
-        <a href="../genindex.html" title="General Index"
-           accesskey="I">index</a></li>
-      <li class="right" >
-        <a href="../modindex.html" title="Global Module Index"
-           accesskey="M">modules</a> |</li>
-      <li class="right" >
-        <a href="2.6.html" title="What’s New in Python 2.6"
-           accesskey="N">next</a> |</li>
 
-      <li class="right" >
-        <a href="index.html" title="What’s New in Python"
-           accesskey="P">previous</a> |</li>
-      <li><%= link_to 'T2Ku',root_path %> &raquo;</li>
-      <li><img src="/icons/book_open.png" alt=""
-               style="vertical-align: middle; margin-top: -1px"/></li>
-      <li><a href="../index.html"><%= @book.title %></a> &raquo;</li>
-      <li><a href="index.html" accesskey="U">Table Of Contents &raquo;</li> 
-    </ul>
-
-  </div>  
+  <header>
+	  <%= render 'headnav' %>
+	  <%= render 'loginreg' if !user_signed_in? %>
+	  <%= alert_or_notice(flash[:alert],flash[:notice]) %>
+	</header>
 
   <div class="document">
     <div class="documentwrapper">
@@ -2643,7 +2619,7 @@ Hugh Secker-Walker.</p>
        rel="nofollow">Show Source</a></li>
 </ul>
 
-        <div id="searchbox" style="display: none">
+        <div id="searchbox" style="">
           <h3>Quick search</h3>
             <form class="search" action="../search.html" method="get">
               <input type="text" name="q" size="18" />
@@ -2656,7 +2632,7 @@ Hugh Secker-Walker.</p>
             Enter search terms or a module, class or function name.
             </p>
         </div>
-        <script type="text/javascript">$('#searchbox').show(0);</script>
+
       </div>
     </div>
 
@@ -2681,9 +2657,8 @@ Hugh Secker-Walker.</p>
 
       <li><img src="/icons/book_open.png" alt=""
                style="vertical-align: middle; margin-top: -1px"/></li>
-      <li><a href="../index.html">Python v2.7.2 documentation</a> &raquo;</li>
-
-        <li><a href="index.html" >What&#8217;s New in Python</a> &raquo;</li> 
+      <li><%= link_to @book.title,@book %> &raquo;</li>
+      <li>Frontpage</li> 
     </ul>
   </div>
   <div class="footer">
@@ -2702,33 +2677,8 @@ Hugh Secker-Walker.</p>
 
 
 <!-- JavaScript at the bottom for fast page loading -->
-
-<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-
-
-<!-- scripts concatenated and minified via ant build script-->
-<script defer src="js/plugins.js"></script>
-<script defer src="js/script.js"></script>
-<!-- end scripts-->
-
-
-<!-- Change UA-XXXXX-X to be your site's ID -->
-<script>
-  window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
-  Modernizr.load({
-    load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-  });
-</script>
-
-
-<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-     chromium.org/developers/how-tos/chrome-frame-getting-started -->
-<!--[if lt IE 7 ]>
-  <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-  <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-<![endif]-->
+<%= render 'sidewidejs' %>
+<%= yield :butt %>
 </body>  
 
 

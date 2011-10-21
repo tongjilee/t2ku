@@ -94,16 +94,15 @@
 
 - content_for :butt do
   = javascript_include_tag 'code'
-
-:javascript
-  jQuery(function() {
-    window.App_MissionLaunch = new T2Ku.Views.MissionLaunch({
-      el: $('#portal')
+  :javascript
+    jQuery(function() {
+      window.App_MissionLaunch = new T2Ku.Views.MissionLaunch({
+        el: $('#portal')
+      });
+      window.App_TasksNew = new T2Ku.Views.TasksNew({
+        el: $('#portal_main_1')
+      });
+      return window.App_QueryNew = new T2Ku.Views.QueryNew({
+        el: $('#portal_main_2')
+      });
     });
-    window.App_TasksNew = new T2Ku.Views.TasksNew({
-      el: $('#portal_main_1')
-    });
-    return window.App_QueryNew = new T2Ku.Views.QueryNew({
-      el: $('#portal_main_2')
-    });
-  });

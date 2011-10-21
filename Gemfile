@@ -38,4 +38,4 @@ end
 gem 'devise'
 gem 'inherited_resources'
 gem 'haml'
-
+gem 'pry'

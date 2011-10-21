@@ -19,7 +19,7 @@
 
 <% @books.each do |book| %>      
         <div class="user_app part" onclick="window.location.href='<%= j book_path(book) %>'">
-          <a class="resources" href="myapps/cnukejian">
+          <a class="resources" href="<%= book_path(book) %>">
             <span class="database"></span>
           </a>
           <div class="app_name">

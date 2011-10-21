@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include UrlHelper
   
   before_filter :set_locale,:check_browser,:render_config,:login_reg
+  before_filter :session_resource_return_to
   before_filter :set_mailer_url_options
 #  before_filter 'render text:request.base_url and return'
   
@@ -28,7 +29,21 @@ class ApplicationController < ActionController::Base
     end
   end
   def login_reg
-    @new_user = User.new if !user_signed_in?
+    if !user_signed_in?
+      @new_user = User.new 
+    end
+  end
+  
+  def session_resource_return_to
+    if request.method=='GET'
+      unless self.controller_name == 'sessions'
+        session[:resource_return_to] = request.path
+      end
+    end
+  end
+  
+  def after_sign_in_path_for(resource_or_scope)
+    session[:resource_return_to] ? session[:resource_return_to] : root_path
   end
   
   def render_optional_error_file(status_code)

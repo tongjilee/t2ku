@@ -29,7 +29,7 @@ module ApplicationHelper
       when 'books'
         retarr << lize(link_to('All Books',books_path),is_listing)
         if is_showing
-          retarr << lize(link_to(@book.name,@book),is_showing)
+          retarr << lize(link_to(@book.title,@book),is_showing)
         else
           retarr << lize(link_to('New Book',new_book_path),is_creating)
         end
