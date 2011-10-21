@@ -2,14 +2,6 @@
 jQuery.fn.exists = -> jQuery(this).length>0
 jQuery.fn.textCompact = ->
   this.text().trim() #TODO: rip off extra spaces
-jQuery ->
-	$('form').each(->
-		$(this).submit(->
-			$('input:submit',this).attr("disabled","disabled")
-			$('input:submit',this).val(tt('hold_on'))
-			return true
-		)
-	)
 
 class AssertException
   constructor:(@message,@line)->
@@ -60,3 +52,13 @@ window.I18n =
 
 window.tt = (token) ->
   I18n.t('t2ku.'+token)
+
+jQuery ->
+  $('form').each(->
+  	$(this).submit(->
+  		$('input:submit',this).attr("disabled","disabled")
+  		$('input:submit',this).val(tt('hold_on'))
+  		return true
+  	)
+  )
+  $('.tiptipsy').tipsy({gravity: $.fn.tipsy.autoNS,fade: true});

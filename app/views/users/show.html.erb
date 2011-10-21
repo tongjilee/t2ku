@@ -6,10 +6,10 @@
     <form id="searchbar">
       <fieldset class="part">
         <h2 id="searchcount" style="width:102px">
-					<%= image_tag(avatar_url(@user),style:'width:80px;height:80px;margin-bottom:14px;border: 1px solid #82859E;padding:2px') %>
+					<%= link_to image_tag(avatar_url(@user),style:'width:80px;height:80px;margin-bottom:14px;border: 1px solid #82859E;padding:2px'),'http://gravatar.com/emails/',class:'tiptipsy','original-title'=>'Change your avatar at gravatar.com' %>
 				</h2>
 				<h2 id="searchcount" style="font-size:28px;margin-top:10px">
-					<%= @user.name %><br>
+					<%= link_to @user.name,@user,style:'color:#8D79F2' %><br>
 					<span style="font-size:14px;color:#82859E">
 						<% if @user.signature and @user.signature!='' %>
 							<%= @user.signature %>
