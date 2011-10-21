@@ -8,29 +8,29 @@ module NavigationHelper
     is_showing = ('show'==controller.action_name)
     is_listing = ('index'==controller.action_name)
     
+    # basic RESTful submenus is done via this lize_many lambda
+    lize_many = ->(controller_name){
+      small = controller_name.singularize
+      big = small.camelize
+      eval <<-CODE
+        retarr << lize(link_to('All #{controller_name.camelize}',#{controller_name}_path),is_listing)
+        if is_showing
+          retarr << lize(link_to(@#{small}.title,@#{small}),is_showing)
+        else
+          retarr << lize(link_to('New #{small.camelize}',new_#{small}_path),is_creating)
+        end
+      CODE
+    }
+    
     case controller.controller_name
       when 'tasks'
         retarr << lize(link_to('Tasks on Queue',tasks_path))
-      when 'books'
-        retarr << lize(link_to('All Books',books_path),is_listing)
-        if is_showing
-          retarr << lize(link_to(@book.title,@book),is_showing)
-        else
-          retarr << lize(link_to('New Book',new_book_path),is_creating)
-        end
-      when 'compilations'
-        retarr << lize(link_to('All Compilations',compilations_path),is_listing)
-        if is_showing
-          retarr << lize(link_to(@compilation.title,@compilation),is_showing)
-        else
-          retarr << lize(link_to('New Compilations',new_compilation_path),is_creating)
-        end
-      when 'definitions'
-        retarr << lize(link_to('Definitions',definitions_path))
-      when 'theorems'
-        retarr << lize(link_to('Theorems',theorems_path))
-      when 'problems'
-        retarr << lize(link_to('Problems',problems_path))
+      when 'books','compilations'
+        lize_many.(controller.controller_name)
+      when 'definitions','theorems','problems'
+        retarr << lize(link_to('Definitions', definitions_path), controller.controller_name=='definitions')
+        retarr << lize(link_to('Theorems', theorems_path), controller.controller_name=='theorems')
+        retarr << lize(link_to('Problems', problems_path), controller.controller_name=='problems')
       when 'users'
         if is_showing
           retarr << lize(link_to(@user.name,@user),is_showing)

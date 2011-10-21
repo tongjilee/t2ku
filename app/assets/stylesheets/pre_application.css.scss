@@ -6,6 +6,32 @@
  *= require codemirror_neat
  *= require codemirror_night 
  *= require codemirror_elegant
- *= require pre_application/t2math
- *= require pre_application/ext
+ *= require ./pre_application/t2math
+ *= require ./pre_application/ext
+ *= require ./pre_application/subheader
+ *= require ./pre_application/innerright
+ *= require_self
 */
+
+header{
+  font-family:Geneva,Tahoma,Arial,sans-serif;
+  a {
+      color: #C9C3E5;
+      text-decoration: none;
+  }
+  a:hover {
+      color: #73B0FF;  
+      text-decoration: none;
+  }  
+  h1, h2, h3 {
+      font-family: "CorbelRegular","Corbel","Helvetica Neue",Helvetica,sans-serif;
+  }
+
+  ul.submenu {
+      display: block;
+      overflow: hidden;
+      padding-top: 5px;
+  }
+  ul.submenu {padding-left:21px}
+}
+
