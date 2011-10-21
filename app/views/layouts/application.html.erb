@@ -23,7 +23,7 @@
 	  <%= render 'loginreg' if !user_signed_in? %>
 	  <%= alert_or_notice(flash[:alert],flash[:notice]) %>
 	</header>
-
+	
   <%= yield %>
 	
   <footer>

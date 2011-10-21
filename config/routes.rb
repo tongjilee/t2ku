@@ -9,6 +9,7 @@ T2ku::Application.routes.draw do
   resources :users
   resources :tasks
   resources :books
+  resources :compilations
   resources :definitions
   resources :theorems
   resources :problems

@@ -1,0 +1,49 @@
+<div class="myapps-index">
+<div id="content" style="width: 980px;">
+
+<div class="panel" id="app-index">
+  <div class="panel-body">
+    <form id="searchbar">
+      <fieldset class="part">
+        <h2 id="searchcount">Top Compilations</h2>
+				<div class="field">
+				          <label>
+				            <a class="viewall" href="">View All</a>
+				            <span class="separator"> | </span>
+				            Filter by Title
+				          </label>
+				          <input type="text" class="text" id="livesearch">
+        </div>
+	     </fieldset>
+    </form>
+
+<% @compilations.each do |compilation| %>      
+        <div class="user_app part" onclick="window.location.href='<%= j compilation_path(compilation) %>'">
+          <a class="resources" href="<%= compilation_path(compilation) %>">
+            <span class="database"></span>
+          </a>
+          <div class="app_name">
+            <h3><%= link_to compilation.title,compilation %></h3>
+          </div>
+          <ul class="submenu">
+
+						<li><a href="#" onclick="event.stopPropagation()"><%= compilation.problems.count %> Problems</a></li>
+						<li><a href="#" onclick="event.stopPropagation()"><%= compilation.theorems.count %> Theorems</a></li>
+            <li><a href="#" onclick="event.stopPropagation()"><%= compilation.definitions.count %> Definitions</a></li>
+
+						<li></li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+<%end %>      
+
+  <div id="searchnotfound">
+    <h3>Thinking about creating your own compilation?&nbsp;&nbsp;<a class="viewall" href="<%= new_compilation_path %>">New Compilation<span> →</span></a></h3>
+  </div>
+
+  </div>
+</div>
+
+</div>
+</div>
+

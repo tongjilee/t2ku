@@ -7,3 +7,31 @@
 .ui-widget-overlay{
   background:transparent;
 }
+
+
+/* =footer
+---------------------------------------------- */
+#heroku-footer {
+  background: #14141b;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .4) inset;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .4) inset;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .4) inset;
+  color: #47456d !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+#heroku-footer .container {
+  width: 994px;
+}
+
+#heroku-footer h3 {
+  color: #b8b8dc;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#heroku-footer a:link,
+#heroku-footer a:visited {
+  color: #47456d;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* ------------------------------------------- */

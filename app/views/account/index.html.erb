@@ -1,84 +1,207 @@
+<div id="container">
 
-<div class="myapps-index">
-<div id="content">
+    <div class="news">
 
-<div class="panel" id="app-index">
-  <div class="panel-body">
-    <form id="searchbar">
-      <fieldset class="part">
-        <h2 id="searchcount">Your Books</h2>
-        <div class="field">
-          <label>
-						<%= link_to 'All Books',books_path %>
-            <span class="separator"> | </span>
-						<%= link_to 'New Book',new_book_path %>
-          </label>
-        </div>
-      </fieldset>
-    </form>
-    
-      
-        <div class="user_app part">
-          <a class="resources" href="myapps/cnukejian">
-            <span class="database"><%=  %></span>
-          </a>
-          <div class="app_name">
-            <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
+      <div class="myapps-index">
+        <div id="content" style="width:100%">
+
+        <div class="panel" id="app-index">
+          <div class="panel-body">
+            <form id="searchbar">
+              <fieldset class="part">
+                <h2 id="searchcount">News Feed</h2>
+                <div class="field">
+                  <label>&nbsp;
+                  </label>
+                </div>
+              </fieldset>
+            </form>
+
+          <div class="user_app part nopointer">
+
           </div>
-          <ul class="submenu">
-            <li><a href="/myapps/cnukejian">Enter</a></li>
-						<li><a href="/myapps/cnukejian">Unwatch</a></li>
-						<li></li>
-          </ul>
-          <div class="clear"></div>
-        </div>
-      
-    
-  </div>
-</div>
+          <div class="user_app part nopointer">
 
-</div>
-</div>
-
-
-
-<div class="myapps-index">
-<div id="content">
-
-<div class="panel" id="app-index">
-  <div class="panel-body">
-    <form id="searchbar">
-      <fieldset class="part">
-        <h2 id="searchcount">Watched Books</h2>
-        <div class="field">
-          <label>
-						<%= link_to 'All Books',books_path %>
-            <span class="separator"> | </span>
-						<%= link_to 'New Book',new_book_path %>
-          </label>
-        </div>
-      </fieldset>
-    </form>
-    
-      
-        <div class="user_app part">
-          <a class="resources" href="myapps/cnukejian">
-            <span class="database"><%=  %></span>
-          </a>
-          <div class="app_name">
-            <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
           </div>
-          <ul class="submenu">
-            <li><a href="/myapps/cnukejian">Enter</a></li>
-						<li><a href="/myapps/cnukejian">Unwatch</a></li>
-						<li></li>
-          </ul>
-          <div class="clear"></div>
-        </div>
-      
-    
-  </div>
-</div>
+                
+                
+                <!-- dup -->
 
-</div>
+                <!-- dup -->
+                
+          </div><!-- end panel-body -->
+        </div><!-- end panel -->
+        </div><!-- end content -->
+      </div><!-- end myapps-index -->
+    </div>
+
+
+
+
+    <div class="col2">
+      <div class="repos" id="your_repos">
+
+        <div class="myapps-index">
+          <div id="content" style="width:100%;margin-top:20px">
+
+          <div class="panel" id="app-index">
+            <div class="panel-body">
+              <form id="searchbar">
+                <fieldset class="part">
+                  <h2 id="searchcount" style="width:180px">Mine (<%= current_user.books.count %>)</h2>
+                  <div class="field" style="margin-right:-28px;margin-top:-22px">
+                    <label>
+          						<%= link_to 'New Compilations',new_compilation_path,class:'button' %>
+                    </label>
+                  </div>
+                </fieldset>
+              </form>
+
+
+                  <div class="user_app part ">
+                    <div class="app_name small_app">
+                      <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+
+
+                  <div class="user_app part ">
+                    <div class="app_name small_app">
+                      <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+
+
+                  <div class="user_app part ">
+                    <div class="app_name small_app">
+                      <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+
+
+                  <div class="user_app part ">
+                    <div class="app_name small_app">
+                      <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+
+
+            </div>
+          </div>
+
+          </div>
+        </div>
+
+      </div>
+
+        <div class="repos watching" id="watched_repos" style="margin-top:-15px">
+
+          <div class="myapps-index">
+            <div id="content" style="width:100%">
+
+            <div class="panel" id="app-index">
+              <div class="panel-body">
+                <form id="searchbar">
+                  <fieldset class="part">
+                    <h2 id="searchcount">Watched <%= link_to 'Compilations',compilations_path,style:'color:#8D79F2' %> (<%= current_user.books.count %>)</h2>
+                    <div class="field">
+                      <label>&nbsp;
+                      </label>
+                    </div>
+                  </fieldset>
+                </form>
+
+
+                    <div class="user_app part ">
+                      <div class="app_name small_app">
+                        <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
+                      </div>
+                      <div class="clear"></div>
+                    </div>
+
+
+                    <div class="user_app part ">
+                      <div class="app_name small_app">
+                        <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
+                      </div>
+                      <div class="clear"></div>
+                    </div>
+
+
+                    <div class="user_app part ">
+                      <div class="app_name small_app">
+                        <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
+                      </div>
+                      <div class="clear"></div>
+                    </div>
+
+
+              </div>
+            </div>
+
+            </div>
+          </div>
+
+
+       </div>
+       
+       
+       
+       
+        <div class="repos watching" id="watched_books" style="margin-top:-15px">
+
+          <div class="myapps-index">
+            <div id="content" style="width:100%">
+
+            <div class="panel" id="app-index">
+              <div class="panel-body">
+                <form id="searchbar">
+                  <fieldset class="part">
+                    <h2 id="searchcount">Watched <%= link_to 'Books',books_path,style:'color:#8D79F2'%> (<%= current_user.books.count %>)</h2>
+                    <div class="field">
+                      <label>&nbsp;
+                      </label>
+                    </div>
+                  </fieldset>
+                </form>
+
+
+                    <div class="user_app part ">
+                      <div class="app_name small_app">
+                        <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
+                      </div>
+                      <div class="clear"></div>
+                    </div>
+
+
+                    <div class="user_app part ">
+                      <div class="app_name small_app">
+                        <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
+                      </div>
+                      <div class="clear"></div>
+                    </div>
+
+
+                    <div class="user_app part ">
+                      <div class="app_name small_app">
+                        <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
+                      </div>
+                      <div class="clear"></div>
+                    </div>
+
+
+              </div>
+            </div>
+
+            </div>
+          </div>
+
+
+       </div>
+    </div>
+<%= clear %>
 </div>

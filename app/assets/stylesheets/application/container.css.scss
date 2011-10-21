@@ -1,0 +1,45 @@
+#container{
+  width: 960px;
+  margin:0 auto;
+  .news {
+      float: left;
+      margin-top: 20px;
+      width: 600px;
+  }
+  #content{
+    padding-top:0 !important;
+  }
+  .col2{
+    float: right;
+    padding: 0 2px;
+    width: 333px;    
+  }
+  h2{
+    font-size:15px;
+  }
+  div.myapps-index #content .panel .user_app{
+     padding: 3px 17px !important;
+  }
+  div.myapps-index #content .app_name h3{
+    font-size:14px;
+    font-weight:normal;
+  }
+  div.myapps-index #content .panel .panel-body #searchbar fieldset{
+    height:14px;
+  }
+  div.myapps-index #content .panel .panel-body .part{
+    padding:16px;
+  }
+}
+
+.small_app{
+  h3{
+    width:220px !important;
+  }
+}
+.nopointer{
+  cursor:auto;
+  &:hover{
+    cursor:auto !important;
+  }
+}
