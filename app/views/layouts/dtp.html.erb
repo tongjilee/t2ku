@@ -3,12 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<title>jQuery API Browser</title>
-<script type="text/javascript" src="lib/jquery/jquery.js"></script>
-<script src="lib/jqueryapi/api-browser.js" type="text/javascript" charset="utf-8"></script>
-<script src="lib/air/AC_RunActiveContent.js" type="text/javascript" charset="utf-8"></script>
-<link media="screen,print" rel="stylesheet" href="assets/css/APIBrowser.css" type="text/css" charset="utf-8" />
-<link media="print" rel="stylesheet" href="assets/css/Print.css" type="text/css" charset="utf-8" />
+<title>T2Ku <%= controller.controller_name %> Browser</title>
+<%= stylesheet_link_tag    "dtp" %>
+<%= javascript_include_tag "application" %>
+<%= javascript_include_tag "dtp" %>
 </head>
 <body id="page">
     <!-- <noscript>
@@ -17,7 +15,7 @@
     </noscript> -->
 
     <div id="header">
-        <img width="215" height="53" alt="jQuery: Write Less, Do More." src="assets/images/logo_jquery_215x53.gif"/>
+        <img width="215" height="53" alt="jQuery: Write Less, Do More." src="/images/jQuery/logo_jquery_215x53.gif"/>
         <div id="navigation">
             <ul>
                 <li class="first"><a class="selected" href="#api">API</a></li>
@@ -31,7 +29,7 @@
     <div id="body">
       <div id="browser">
           <div class="inner">
-              <p class="loading"><img src="assets/images/spinner.gif" /> Loading jQuery API database</p>
+              <p class="loading"><img src="/images/jQuery/spinner.gif" /> Loading jQuery API database</p>
 
           </div>
       </div>
@@ -84,7 +82,7 @@ if (!window.runtime) {
         		'name','badge',
         		'allowscriptaccess','all',
         		'pluginspage','http://www.macromedia.com/go/getflashplayer',
-        		'flashvars','appname=Sample%20Application&appurl=update/jquery-api-browser-2.0.air&airversion=2.0&imageurl=assets/images/badge.jpg',
+        		'flashvars','appname=Sample%20Application&appurl=update/jquery-api-browser-2.0.air&airversion=2.0&imageurl=/images/jQuery/badge.jpg',
         		'movie','badge' ); //end AC code
 
         } else {  // flash is too old or we can't detect the plugin
