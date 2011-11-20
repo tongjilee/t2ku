@@ -28,7 +28,7 @@ test:
   database: t2ku_test
   pool: 5
   username: root
-  password:
+  password: pmqpmq55
   socket: /tmp/mysql.sock
 
 production:

@@ -1,4 +1,6 @@
 T2ku::Application.routes.draw do
+  devise_for :users
+
   constraints(Subdomain){match '/'=>'tasks#new'}
   devise_for :users,:path => 'd' do
     get "/register", :to => "registrations#new"

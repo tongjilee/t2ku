@@ -18,7 +18,5 @@ class User < ActiveRecord::Base
   validates_length_of :location,:maximum=>80
   validates_length_of :signature,:maximum=>90  
   
-  has_many :books
-  has_many :compilations
   has_many :tasks
 end
