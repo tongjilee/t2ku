@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 T2ku::Application.routes.draw do
   ActiveAdmin.routes(self)
 

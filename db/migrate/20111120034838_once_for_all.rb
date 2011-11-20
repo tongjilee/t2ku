@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class OnceForAll < ActiveRecord::Migration
   def change
     create_table :authors do |t|

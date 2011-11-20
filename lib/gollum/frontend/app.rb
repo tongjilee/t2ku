@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'cgi'
 require 'sinatra'
 require 'gollum'
@@ -13,9 +14,8 @@ module Precious
     dir = File.dirname(File.expand_path(__FILE__))
 
     # We want to serve public assets for now
-
-    set :public,    "#{dir}/public"
-    set :static,    true
+    set :public_folder, "#{dir}/public"
+    set :static,         true
 
     set :mustache, {
       # Tell mustache where the Views constant lives

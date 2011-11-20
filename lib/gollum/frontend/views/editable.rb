@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Precious
   module Editable
     def formats(selected = @page.format)

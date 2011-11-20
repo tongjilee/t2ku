@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ChannnnnUsers < ActiveRecord::Migration
   def up
     add_column :users,:name,:string

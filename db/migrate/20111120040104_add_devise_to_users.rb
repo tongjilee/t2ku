@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddDeviseToUsers < ActiveRecord::Migration
   def self.change
     create_table(:users) do |t|

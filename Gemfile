@@ -44,3 +44,25 @@ gem "timeline_fu",:git=>'https://github.com/jamesgolick/timeline_fu.git'
 gem 'activeadmin'
 gem 'sass-rails'
 gem "meta_search",    '>= 1.1.0.pre'
+
+
+
+
+gem 'grit', "~> 2.4.1"
+gem 'github-markup', [">= 0.4.0", "< 1.0.0"]
+gem 'pygments.rb', "~> 0.2.0"
+gem 'mustache', [">= 0.11.2", "< 1.0.0"]
+gem 'sanitize', "~> 2.0.0"
+gem 'nokogiri', "~> 1.4"
+gem 'redcarpet'
+
+gem 'RedCloth'
+gem 'mocha'
+gem 'org-ruby'
+gem 'rdiscount'
+gem 'shoulda'
+gem 'rack-test'
+gem 'wikicloth', '~> 0.6.3'
+gem 'rake', '~> 0.9.2'
+
+gem "friendly_id", "~> 4.0.0.beta14"

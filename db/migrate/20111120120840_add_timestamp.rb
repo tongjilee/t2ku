@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddTimestamp < ActiveRecord::Migration
   def change
     add_column :authors,:created_at,:datetime

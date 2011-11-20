@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class UserAgain_ < ActiveRecord::Migration
   def change
     create_table :users do |t|

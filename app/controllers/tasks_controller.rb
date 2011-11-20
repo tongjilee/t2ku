@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class TasksController < InheritedResources::Base
   def new
     @randoms = [

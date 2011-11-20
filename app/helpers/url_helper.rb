@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module UrlHelper
   def with_subdomain(subdomain)
     subdomain = (subdomain || "")

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :lockable, :timeoutable and :omniauthable
@@ -22,4 +23,7 @@ class User < ActiveRecord::Base
   def books
     []
   end
+  
+  extend FriendlyId
+  friendly_id :name, :use => :slugged
 end

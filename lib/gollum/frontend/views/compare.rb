@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Precious
   module Views
     class Compare < Layout
