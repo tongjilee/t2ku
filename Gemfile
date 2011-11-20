@@ -48,13 +48,14 @@ gem "meta_search",    '>= 1.1.0.pre'
 
 
 
-gem 'grit', "~> 2.4.1"
+gem 'grit', :git=>'https://github.com/mojombo/grit.git'
 gem 'github-markup', [">= 0.4.0", "< 1.0.0"]
 gem 'pygments.rb', "~> 0.2.0"
 gem 'mustache', [">= 0.11.2", "< 1.0.0"]
 gem 'sanitize', "~> 2.0.0"
 gem 'nokogiri', "~> 1.4"
 gem 'redcarpet'
+gem 'sinatra', "~> 1.0"
 
 gem 'RedCloth'
 gem 'mocha'

@@ -26,9 +26,12 @@ def problems;[];end
   
   def create_book_git!
     if self.id
-      # now create the git repository for the book
-      p cmd="cd #{Rails.root}/books;git init;mv .git #{self.id}"
-      p `#{cmd}`
+      path = File.expand_path("books/#{self.id}.git/",Rails.root)
+      if(!File.exists?(path))
+        # now create the git repository for the book
+        p cmd="cd #{Rails.root}/books;git init;mv .git #{self.id}.git"
+        p `#{cmd}`
+      end
     end
   end
   after_create :create_book_git!
