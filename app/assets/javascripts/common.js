@@ -10,3 +10,4 @@
 //= require_tree ./app/models_n_collections
 //= require_tree ./app/routers
 //= require_tree ./app/views
+//= require ext

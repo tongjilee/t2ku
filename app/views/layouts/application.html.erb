@@ -14,7 +14,7 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <%= stylesheet_link_tag    "pre_application" %>
   <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag    "pre_application" %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= params[:controller] %>" id="<%= pos_signature %>">
@@ -31,7 +31,7 @@
   </footer>
   
   
-  <%= render 'sidewidejs' %>
+  <%= render 'commonjs' %>
   <%= yield :butt %>
 </body>
 </html>

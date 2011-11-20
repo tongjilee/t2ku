@@ -25,7 +25,7 @@ module NavigationHelper
     case controller.controller_name
       when 'tasks'
         retarr << lize(link_to('Tasks on Queue',tasks_path))
-      when 'books','compilations'
+      when 'books'
         lize_many.(controller.controller_name)
       when 'definitions','theorems','problems'
         retarr << lize(link_to('Definitions', definitions_path), controller.controller_name=='definitions')

@@ -19,4 +19,7 @@ class User < ActiveRecord::Base
   validates_length_of :signature,:maximum=>90  
   
   has_many :tasks
+  def books
+    []
+  end
 end

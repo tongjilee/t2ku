@@ -1,5 +1,5 @@
 require File.expand_path('../boot', __FILE__)
-
+require File.expand_path('../../git_sensitive',__FILE__)
 require 'rails/all'
 
 if defined?(Bundler)
@@ -17,7 +17,7 @@ module T2ku
       :port                 => 587,
       :domain               => 't2ku.org',
       :user_name            => 'pmq2001@gmail.com',
-      :password             => 'pmqpmQ132792',
+      :password             => GIT_SENSITIVE_SMTP_PASSWORD,
       :authentication       => 'plain',
       :enable_starttls_auto => true  }
     config.action_mailer.default_url_options = { :host => 't2ku.org' }

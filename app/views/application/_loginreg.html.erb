@@ -4,7 +4,7 @@
 		<%= form_tag new_user_session_path,:id=>'login_form',:style=>'margin-top:-14px' do %>
 			<fieldset>
 				<label for="user_email">E-mail</label>
-				<input type="text" class="text ui-widget-content ui-corner-all" value="" id="user_email_log" name="user[email]" onkeypress="if(event.keyCode==13){$('#user_password_log').focus();}">
+				<input type="text" class="text ui-widget-content ui-corner-all" value="" id="user_email_log" name="user[email]">
 				<label for="user_password"><%= tt('loginreg.passwd') %></label>
 				<input type="password" class="text ui-widget-content ui-corner-all" value="" id="user_password_log" name="user[password]" onkeypress="if(event.keyCode==13){$('#login_form').submit();}">
 			</fieldset>

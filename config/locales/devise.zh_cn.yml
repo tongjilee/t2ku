@@ -16,7 +16,7 @@ zh_cn:
       inactive: '你的账户还没有激活'
     sessions:
       signed_in: '登陆成功'
-      signed_out: '登出成功'
+      signed_out: '已退出'
     passwords:
       send_instructions: '几分钟后你会收到一份关于如何重置密码说明的邮件'
       updated: '你的密码已成功更新。现在你已经登陆'

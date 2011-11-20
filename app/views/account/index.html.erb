@@ -48,10 +48,10 @@
             <div class="panel-body">
               <form id="searchbar">
                 <fieldset class="part">
-                  <h2 id="searchcount" style="width:180px">Mine (<%= current_user.books.count %>)</h2>
-                  <div class="field" style="margin-right:-22px;margin-top:-22px">
+                  <h2 id="searchcount" style="width:180px">My Tasks (<%= current_user.tasks.count %>)</h2>
+                  <div class="field" style="margin-right:-22px;margin-top:-26px">
                     <label>
-          						<%= link_to 'New Compilations',new_compilation_path,class:'button' %>
+          						<%= link_to 'Misson Launch',new_task_path,class:'button' %>
                     </label>
                   </div>
                 </fieldset>
@@ -98,59 +98,6 @@
 
       </div>
 
-        <div class="repos watching" id="watched_repos" style="margin-top:-15px">
-
-          <div class="myapps-index">
-            <div id="content" style="width:100%">
-
-            <div class="panel" id="app-index">
-              <div class="panel-body">
-                <form id="searchbar">
-                  <fieldset class="part">
-                    <h2 id="searchcount">Watched <%= link_to 'Compilations',compilations_path,style:'color:#8D79F2' %> (<%= current_user.books.count %>)</h2>
-                    <div class="field">
-                      <label>&nbsp;
-                      </label>
-                    </div>
-                  </fieldset>
-                </form>
-
-
-                    <div class="user_app part ">
-                      <div class="app_name small_app">
-                        <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
-                      </div>
-                      <div class="clear"></div>
-                    </div>
-
-
-                    <div class="user_app part ">
-                      <div class="app_name small_app">
-                        <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
-                      </div>
-                      <div class="clear"></div>
-                    </div>
-
-
-                    <div class="user_app part ">
-                      <div class="app_name small_app">
-                        <h3><a href="/myapps/cnukejian">cnukejian</a></h3>
-                      </div>
-                      <div class="clear"></div>
-                    </div>
-
-
-              </div>
-            </div>
-
-            </div>
-          </div>
-
-
-       </div>
-       
-       
-       
        
         <div class="repos watching" id="watched_books" style="margin-top:-15px">
 

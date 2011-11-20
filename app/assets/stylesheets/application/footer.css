@@ -1,6 +1,6 @@
-@font-face { font-family: "Corbel Bold"; font-weight: normal; src: local("Corbel Bold"), url("https://statics.heroku.com/fonts/corbel.ttf"), url(https://statics.heroku.com/fonts/corbelbold.ttf); }
+@font-face { font-family: "Corbel Bold"; font-weight: normal; src: local("Corbel Bold"), url("/fonts/corbel-webfont.ttf"), url(/fonts/corbelbold-webfont.ttf); }
 
-@font-face { font-family: "Corbel"; font-weight: normal; src: local("Corbel"), local("Corbel Regular"), url("https://statics.heroku.com/fonts/corbel.ttf"), url(https://statics.heroku.com/fonts/corbel.ttf); }
+@font-face { font-family: "Corbel"; font-weight: normal; src: local("Corbel"), local("Corbel Regular"), url("/fonts/corbel-webfont.ttf"), url(/fonts/corbel-webfont.ttf); }
 
 #heroku-footer { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: arial, helvetica, sans-serif; vertical-align: baseline; clear: both; overflow: hidden; display: inline-block; font-size: 14px; line-height: 18px; text-align: center; background-color: #212121; background-image: url(/images/footer-background.png); background-repeat: repeat-x; padding-bottom: 40px; color: #555555; min-width: 1044px; }
 #heroku-footer div, #heroku-footer span, #heroku-footer object, #heroku-footer iframe, #heroku-footer h1, #heroku-footer h2, #heroku-footer h3, #heroku-footer h4, #heroku-footer h5, #heroku-footer h6, #heroku-footer p, #heroku-footer pre, #heroku-footer a, #heroku-footer abbr, #heroku-footer acronym, #heroku-footer address, #heroku-footer code, #heroku-footer del, #heroku-footer dfn, #heroku-footer em, #heroku-footer img, #heroku-footer dl, #heroku-footer dt, #heroku-footer dd, #heroku-footer ol, #heroku-footer ul, #heroku-footer li, #heroku-footer fieldset, #heroku-footer form, #heroku-footer input, #heroku-footer label, #heroku-footer legend, #heroku-footer caption, #heroku-footer tbody, #heroku-footer tfoot, #heroku-footer thead, #heroku-footer tr { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: arial, helvetica, sans-serif; vertical-align: baseline; }
@@ -31,5 +31,5 @@
 #heroku-footer #heroku-footer-pull dd { padding-bottom: 12px; font-size: 12px; color: #555555; }
 #heroku-footer #heroku-footer-pull dd a { color: #555555; }
 #heroku-footer #heroku-footer-pull #heroku-footer-twitter { font-weight: bold; }
-#heroku-footer #heroku-footer-pull #heroku-footer-twitter span { display: inline-block; overflow: hidden; text-indent: 9999px; width: 90px; height: 18px; margin-top: -4px; line-height: 20px; background-image: url(https://nav.heroku.com/images/footer-twitter.png); background-repeat: no-repeat; background-position: 0 -18px; vertical-align: middle; }
+#heroku-footer #heroku-footer-pull #heroku-footer-twitter span { display: inline-block; overflow: hidden; text-indent: 9999px; width: 90px; height: 18px; margin-top: -4px; line-height: 20px; background-image: url(/images/footer-twitter.png); background-repeat: no-repeat; background-position: 0 -18px; vertical-align: middle; }
 #heroku-footer #heroku-footer-pull #heroku-footer-twitter:hover span { background-position: 0 0; }

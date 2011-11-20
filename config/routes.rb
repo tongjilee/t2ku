@@ -1,5 +1,7 @@
 T2ku::Application.routes.draw do
-  devise_for :users
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
 
   constraints(Subdomain){match '/'=>'tasks#new'}
   devise_for :users,:path => 'd' do
@@ -11,11 +13,11 @@ T2ku::Application.routes.draw do
   resources :users
   resources :tasks
   resources :books
-  resources :compilations
   resources :definitions
   resources :theorems
   resources :problems
   resources :references
+  resources :authors
   resources :helps
   get 'account' => 'account#index',:as=>'account'
   get 'downloads' => 'home#downloads',:as=>'downloads'

@@ -14,7 +14,15 @@
 		      <h3>Book URL</h3>
 		      <p><span style="color:#C9C3E5"><%= "#{request.base_url}/books/" %><span id="book_url_to_be"></span></span></p>
 		    </div>
-		
+
+		    <div class="part app-rename">
+		      <h3>Authors</h3>
+					<p id="rename">
+						<%= f.text_field :authors_input %>
+					</p>
+
+		    </div>
+
 		    <div class="part">
 		      <h3>Short Description</h3>
 		        <p>
@@ -24,7 +32,7 @@
 		    </div>
 
 	  		<div class="part app-destroy">
-					<%= f.submit class:'submit' %>
+					<%= f.submit 'Create Book',class:'submit' %>
 	  		</div>
 
 		  </div>

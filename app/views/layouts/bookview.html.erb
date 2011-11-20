@@ -26,13 +26,12 @@
   <%= stylesheet_link_tag "pre_application" %>
   <%= stylesheet_link_tag 'bookview' %>
   <!-- end CSS-->
-
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
   <!-- All JavaScript at the bottom, except for Modernizr / Respond.
        Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
        For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag    "pre_application" %>
 </head>
 <body>
 
@@ -55,9 +54,11 @@
 
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Editors:</th><td class="field-body"><%= @book.editors %></td>
-</tr>
-<tr class="field"><th class="field-name">Authors:</th><td class="field-body"><%= @book.authors %></td>
+<tr class="field"><th class="field-name">Authors:</th><td class="field-body">
+<%@book.authors.each do |author| %>
+<%= link_to author.name,author %>
+<%end %>
+</td>
 </tr>
 <tr class="field"><th class="field-name">Last Update:</th><td class="field-body"><%= time_ago_in_words(@book.updated_at) %> ago</td>
 </tr>
@@ -2677,7 +2678,7 @@ Hugh Secker-Walker.</p>
 
 
 <!-- JavaScript at the bottom for fast page loading -->
-<%= render 'sidewidejs' %>
+<%= render 'commonjs' %>
 <%= yield :butt %>
 </body>  
 

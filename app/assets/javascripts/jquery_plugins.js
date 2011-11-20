@@ -1,1 +1,0 @@
-//= require jquery.tipsy.js

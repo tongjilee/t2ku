@@ -26,5 +26,7 @@ T2ku::Application.configure do
   config.assets.compress = false
 
   # Expands the lines which load the assets
-  config.assets.debug = true
+  # PSVR> temporarily false because of active admin
+  config.assets.debug = false
+  
 end
