@@ -33,6 +33,9 @@ div.body {
     color: #000000;
     padding: 0 20px 30px 20px;
 }
+div.body p{
+  text-indent: 1em;
+}
 
 div.footer {
     background-color: #1E212F;

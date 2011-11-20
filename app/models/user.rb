@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
   validates_length_of :signature,:maximum=>90  
   
   has_many :tasks
+  has_and_belongs_to_many :books
+  before_destroy Proc.new{
+    self.books.delete_all
+  }
   def books
     []
   end

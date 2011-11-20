@@ -2,6 +2,7 @@
 <div id="login_reg_box">
 <div id="loginbox">
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<input type="hidden" name="redirect_to" value="<%= params[:redirect_to] %>"/>
 	<h1><%= tt('loginreg.button11') %> <%= link_to "(#{tt('loginreg.besides_login')})", new_registration_path(resource_name),:class=>'special' %></h1>
 	  <div class="formbody">
       	<label for="login">

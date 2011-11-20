@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
   before_filter :session_resource_return_to
   before_filter :set_mailer_url_options
 #  before_filter 'render text:request.base_url and return'
+  before_filter Proc.new{
+    # flash[:notice]='hi'
+  }
   
   def set_locale
     I18n.locale = extract_locale_from_subdomain || I18n.default_locale
@@ -36,15 +39,17 @@ class ApplicationController < ActionController::Base
   end
   
   def session_resource_return_to
-    if request.method=='GET'
-      unless self.controller_name == 'sessions'
-        session[:resource_return_to] = request.path
-      end
+    if params[:redirect_to]
+      session[:resource_return_to] = params[:redirect_to]
     end
   end
   
   def after_sign_in_path_for(resource_or_scope)
-    session[:resource_return_to] ? session[:resource_return_to] : root_path
+    if params[:redirect_to].blank?
+      root_path
+    else
+      params[:redirect_to]
+    end
   end
   
   def render_optional_error_file(status_code)

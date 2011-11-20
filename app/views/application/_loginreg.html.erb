@@ -3,6 +3,7 @@
 	<div id="login-form" class="floating_dialog" style="display:none">
 		<%= form_tag new_user_session_path,:id=>'login_form',:style=>'margin-top:-14px' do %>
 			<fieldset>
+        <input type="hidden" name="redirect_to" value="<%= request.path %>"/>
 				<label for="user_email">E-mail</label>
 				<input type="text" class="text ui-widget-content ui-corner-all" value="" id="user_email_log" name="user[email]">
 				<label for="user_password"><%= tt('loginreg.passwd') %></label>

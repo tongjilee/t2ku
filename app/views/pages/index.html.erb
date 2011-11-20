@@ -1,0 +1,109 @@
+<h1>All Pages</h1>
+<p>
+The following list is an enumeration of all pages of <%= @book.title %>.
+</p>
+
+<p><strong>Basic Pages:</strong></p>
+<table class="contentstable" align="center"><tbody><tr>
+  <td width="50%">
+    <p class="biglink"><a class="biglink" href="whatsnew/2.7.html">Frontpage</a><br>
+       <span class="linkdescr">or <a href="whatsnew/index.html">all "What's new" documents</a> since 2.0</span></p>
+  </td><td width="50%">
+    <p class="biglink"><a class="biglink" href="extending/index.html">Table of Contents</a><br>
+       <span class="linkdescr">tutorial for C/C++ programmers</span></p>
+  </td></tr>
+</tbody></table>
+
+<p><strong>Main:</strong></p>
+<table class="contentstable" align="center"><tbody><tr>
+  <td width="50%">
+<%= @pages.each_with_index do |page,i| %>
+<% next if i%2==0 %>
+    <p class="biglink"><a class="biglink" href="modindex.html"><%= page.name %></a><br>
+       <span class="linkdescr">quick access to all modules</span></p>
+<%end %>
+  </td><td width="50%">
+<%= @pages.each_with_index do |page,i| %>
+<% next if i%2==1 %>
+    <p class="biglink"><a class="biglink" href="search.html">Search page</a><br>
+       <span class="linkdescr">search this documentation</span></p>
+<%end %>
+  </td></tr>
+</tbody></table>
+
+<p><strong>Meta information:</strong></p>
+<table class="contentstable" align="center"><tbody><tr>
+  <td width="50%">
+    <p class="biglink"><a class="biglink" href="bugs.html">Reporting bugs</a></p>
+    <p class="biglink"><a class="biglink" href="about.html">About the documentation</a></p>
+  </td><td width="50%">
+    <p class="biglink"><a class="biglink" href="license.html">History and License of Python</a></p>
+    <p class="biglink"><a class="biglink" href="copyright.html">Copyright</a></p>
+  </td></tr>
+</tbody></table>
+
+
+
+
+
+
+
+
+<div id="wiki-wrapper" class="results">
+<div id="head">
+  <h1>{{title}}</h1>
+  <ul class="actions">
+    <li class="minibutton"><a href="/"
+       class="action-edit-page">Home</a></li>
+  </ul>
+  {{>searchbar}}
+</div>
+<div id="results">
+
+{{#has_results}}
+  <ul>
+    {{#results}}
+    <li>
+      <a href="/{{name}}">{{name}}</a> 
+    </li>
+    {{/results}}
+  </ul>
+{{/has_results}}
+
+{{#no_results}}
+  <p id="no-results">
+    There are no pages in <strong>{{ref}}</strong>.
+  </p>
+{{/no_results}}
+
+</div>
+<div id="footer">
+  <ul class="actions">
+    <li class="minibutton"><a href="#">Back to Top</a></li>
+  </ul>
+</div>
+</div>
+
+
+# -*- encoding : utf-8 -*-
+module Precious
+  module Views
+    class Pages < Layout
+      attr_reader :results, :ref
+
+      def title
+        "All pages in #{@ref}"
+      end
+
+      def has_results
+        !@results.empty?
+      end
+      
+      def no_results 
+        @results.empty?
+      end
+    end
+  end
+end
+
+

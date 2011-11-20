@@ -1,7 +1,9 @@
 # -*- encoding : utf-8 -*-
 
 module ApplicationHelper
-  
+  def err(resource)
+    alert_or_notice(resource.errors.full_messages.join(",#{tt('and')}"),nil,{go_away:false}) if resource and !resource.errors.empty?
+  end
   def avatar_url(user,s=80)
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
     "http://gravatar.com/avatar/#{gravatar_id}.png?r=PG&s=#{s}"
@@ -86,14 +88,15 @@ module ApplicationHelper
   end
   
   
-  def alert_or_notice(alert = nil,notice = nil,options = nil)
+  def alert_or_notice(alert = nil,notice = nil,options = {})
     ret = ''
+    options[:style] ||= ''
     if alert or notice
       if notice
         notice+='.' unless notice.ends_with?('.')
         simple = (notice==t('devise.sessions.signed_in') || notice==t('devise.sessions.signed_out'))
         if simple
-          ret <<'<div class="alert_or_notice">
+          ret <<'<div class="alert_or_notice" style="'+options[:style]+'">
         			<div class="ui-widget anotice"  id="notice">
         				<div style="padding: 0pt 0.7em;" class="ui-state-highlight ui-corner-all"> 
         					<p><span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-info"></span>
@@ -107,7 +110,7 @@ module ApplicationHelper
                 });
               </script>'
         else
-          ret <<'<div class="alert_or_notice">
+          ret <<'<div class="alert_or_notice" style="'+options[:style]+'">
     			<div class="ui-widget anotice"  id="notice">
     				<div style="padding: 0pt 0.7em;" class="ui-state-highlight ui-corner-all"> 
     					<p><span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-info"></span>
@@ -120,7 +123,7 @@ module ApplicationHelper
       end
       if alert
         alert+='.' unless alert.ends_with?('.')
-        ret <<'<div class="alert_or_notice">
+        ret <<'<div class="alert_or_notice" style="'+options[:style]+'">
   			<div class="ui-widget afailure" id="alert">
   				<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> 
   					<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span> 

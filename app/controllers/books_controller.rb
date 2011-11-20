@@ -6,4 +6,10 @@ class BooksController < InheritedResources::Base
       format.html{render layout:'bookview'}
     end
   end
+  
+  def create
+    create!
+    @book.touch_user(current_user)
+  end
+  
 end

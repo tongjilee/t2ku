@@ -1,0 +1,31 @@
+<div class="section" id="">
+  <h1><%= @book.title %><a class="headerlink" href="#what-s-new-in-python-2-7" title="Permalink to this headline">¶</a></h1>
+  <table class="docutils field-list" frame="void" rules="none">
+  <col class="field-name" />
+
+  <col class="field-body" />
+  <tbody valign="top">
+  <tr class="field"><th class="field-name">Authors:</th><td class="field-body">
+  <%@book.authors.each do |author| %>
+  <%= link_to author.name,author %>
+  <%end %>
+  </td>
+  </tr>
+  <tr class="field"><th class="field-name">Editors:</th><td class="field-body">
+  <%@book.users.each_with_index do |user,i| %>
+  <%= link_to user.name,user %><%= ', ' unless i+1==@book.users.count %>
+  <%end %>
+  </td>
+  </tr>
+  <tr class="field"><th class="field-name">Last Update:</th><td class="field-body"><%= time_ago_in_words(@book.updated_at) %> ago</td>
+  </tr>
+  </tbody>
+  </table>
+  <p><%= @book.description %></p>
+  
+  <h2>Recent Edits<a class="headerlink" href="#python-3-1-features" title="Permalink to this headline">¶</a></h2>
+  <p>Much as Python 2.6 incorporated features from Python 3.0,
+  version 2.7 incorporates some of the new features
+  in Python 3.1.  The 2.x series continues to provide tools
+  for migrating to the 3.x series.</p>
+</div>
