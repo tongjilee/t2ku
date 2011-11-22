@@ -1,6 +1,6 @@
 
 postgres -D /usr/local/pgsql/data >/usr/local/pgsql/logfile.log 2>&1 &
-or
+
 postgres -D /usr/local/pgsql/data
 
 
