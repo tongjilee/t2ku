@@ -14,7 +14,7 @@ T2ku::Application.routes.draw do
   resources :users
   resources :tasks
   resources :books do
-    resources :pages
+    resources :items
   end
   resources :definitions
   resources :theorems

@@ -12,29 +12,21 @@ class Book < ActiveRecord::Base
       nil
     end
   end
+  attr_reader :wiki
   after_initialize Proc.new{
     @wiki = Gollum::Wiki.new(self.wiki_path, {}) if self.wiki_path
   }
   def loc
     ret = []
-    if @wiki and page = @wiki.page('Home')
+    if @wiki and page = @wiki.page('Table Of Contents')
       doc = Nokogiri::HTML(page.formatted_data)
       doc.css('body>ul>li').collect(&:to_s).each do |string|
-        # sanitize!--------------------
+        string.gsub!("href=\"/","href=\"/books/#{self.slug}/items/")
         string.gsub!(/\$(\s)*\\S(\s)*\$/,'§')
+        # sanitize!--------------------
         # sanitize!--------------------
         ret << string
       end
-    end
-    ret
-  end
-  def pages
-    ret = []
-    if @wiki
-      @wiki.pages.each do |page|
-        ret << Page.new(page)
-      end
-      binding.pry
     end
     ret
   end
@@ -44,6 +36,7 @@ class Book < ActiveRecord::Base
     self.authors.delete_all
     self.users.delete_all
   }
+  has_many :items
   # has_many :definitions,:through=>:book_items
   # has_many :theorems,:through=>:book_items
   # has_many :problems,:through=>:book_items
