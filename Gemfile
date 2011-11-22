@@ -1,18 +1,19 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.1.3'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'pg'
 
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+   gem 'sass-rails',   '~> 3.1.5'
+   gem 'coffee-rails', '~> 3.1.1'
+   gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
@@ -31,24 +32,23 @@ gem 'jquery-rails'
 
 group :test do
   # Pretty printed test output
-  gem 'turn', :require => false
+  gem 'turn', '~> 0.8.3', :require => false
 end
 
 gem 'devise'
 gem 'inherited_resources'
 gem 'haml'
 gem 'pry'
-gem "timeline_fu",:git=>'https://github.com/jamesgolick/timeline_fu.git'
+gem "timeline_fu",:git=>'git://github.com/jamesgolick/timeline_fu.git'
 
 
 gem 'activeadmin'
-gem 'sass-rails'
 gem "meta_search",    '>= 1.1.0.pre'
 
 
 
 
-gem 'grit', :git=>'https://github.com/mojombo/grit.git'
+gem 'grit', :git=>'git://github.com/mojombo/grit.git'
 gem 'github-markup', [">= 0.4.0", "< 1.0.0"]
 gem 'pygments.rb', "~> 0.2.0"
 gem 'mustache', [">= 0.11.2", "< 1.0.0"]
