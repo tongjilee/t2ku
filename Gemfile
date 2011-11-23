@@ -39,7 +39,6 @@ gem 'devise'
 gem 'inherited_resources'
 gem 'haml'
 gem 'pry'
-gem "timeline_fu",:git=>'git://github.com/jamesgolick/timeline_fu.git'
 
 
 gem 'activeadmin'

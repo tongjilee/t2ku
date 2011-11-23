@@ -1,10 +1,4 @@
 GIT
-  remote: git://github.com/jamesgolick/timeline_fu.git
-  revision: 45b695375045ff80e852dbe52ecbd600d64b14a5
-  specs:
-    timeline_fu (0.4.1)
-
-GIT
   remote: git://github.com/mojombo/grit.git
   revision: ff015074ef35bd94cba943f9c0f98e161ab5851c
   specs:
@@ -235,7 +229,6 @@ DEPENDENCIES
   sass-rails (~> 3.1.5)
   shoulda
   sinatra (~> 1.0)
-  timeline_fu!
   turn (~> 0.8.3)
   uglifier (>= 1.0.3)
   wikicloth (~> 0.6.3)
