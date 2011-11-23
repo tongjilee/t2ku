@@ -1,0 +1,6 @@
+<li><%= link_to 'Mission Launch',root_path %></li>
+<li><%= link_to 'Tasks on Queue',tasks_path %></li>
+<li><%= link_to 'T2Ku Books',books_path %></li>
+<li><%= link_to 'Definitions',definitions_path %> / <%= link_to 'Theorems',theorems_path %> / <%= link_to 'Problems',problems_path %></li>
+<li><%= link_to 'About',about_path %></li>
+<li><%= link_to 'Help',helps_path %></li>

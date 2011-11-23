@@ -1,0 +1,6 @@
+#!/bin/bash -x
+rm -f /root/t2ku/t2ku.sql
+sudo -u pg pg_dump t2ku > /home/pg/t2ku.sql
+cp /home/pg/t2ku.sql /root/t2ku/t2ku.sql
+gitt "t2ku dump again"
+

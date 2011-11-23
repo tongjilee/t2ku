@@ -123,7 +123,7 @@ ALTER SEQUENCE admin_users_id_seq OWNED BY admin_users.id;
 -- Name: admin_users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: super
 --
 
-SELECT pg_catalog.setval('admin_users_id_seq', 1, false);
+SELECT pg_catalog.setval('admin_users_id_seq', 1, true);
 
 
 --
@@ -326,6 +326,98 @@ SELECT pg_catalog.setval('items_id_seq', 1, false);
 
 
 --
+-- Name: pfeed_deliveries; Type: TABLE; Schema: public; Owner: super; Tablespace: 
+--
+
+CREATE TABLE pfeed_deliveries (
+    id integer NOT NULL,
+    pfeed_receiver_id integer,
+    pfeed_receiver_type character varying(255),
+    pfeed_item_id integer,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+ALTER TABLE public.pfeed_deliveries OWNER TO super;
+
+--
+-- Name: pfeed_deliveries_id_seq; Type: SEQUENCE; Schema: public; Owner: super
+--
+
+CREATE SEQUENCE pfeed_deliveries_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.pfeed_deliveries_id_seq OWNER TO super;
+
+--
+-- Name: pfeed_deliveries_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: super
+--
+
+ALTER SEQUENCE pfeed_deliveries_id_seq OWNED BY pfeed_deliveries.id;
+
+
+--
+-- Name: pfeed_deliveries_id_seq; Type: SEQUENCE SET; Schema: public; Owner: super
+--
+
+SELECT pg_catalog.setval('pfeed_deliveries_id_seq', 1, false);
+
+
+--
+-- Name: pfeed_items; Type: TABLE; Schema: public; Owner: super; Tablespace: 
+--
+
+CREATE TABLE pfeed_items (
+    id integer NOT NULL,
+    type character varying(255),
+    originator_id integer,
+    originator_type character varying(255),
+    participant_id integer,
+    participant_type character varying(255),
+    data text,
+    expiry timestamp without time zone,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+ALTER TABLE public.pfeed_items OWNER TO super;
+
+--
+-- Name: pfeed_items_id_seq; Type: SEQUENCE; Schema: public; Owner: super
+--
+
+CREATE SEQUENCE pfeed_items_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.pfeed_items_id_seq OWNER TO super;
+
+--
+-- Name: pfeed_items_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: super
+--
+
+ALTER SEQUENCE pfeed_items_id_seq OWNED BY pfeed_items.id;
+
+
+--
+-- Name: pfeed_items_id_seq; Type: SEQUENCE SET; Schema: public; Owner: super
+--
+
+SELECT pg_catalog.setval('pfeed_items_id_seq', 1, false);
+
+
+--
 -- Name: problems; Type: TABLE; Schema: public; Owner: super; Tablespace: 
 --
 
@@ -523,7 +615,7 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: super
 --
 
-SELECT pg_catalog.setval('users_id_seq', 1, false);
+SELECT pg_catalog.setval('users_id_seq', 1, true);
 
 
 --
@@ -572,6 +664,20 @@ ALTER TABLE items ALTER COLUMN id SET DEFAULT nextval('items_id_seq'::regclass);
 -- Name: id; Type: DEFAULT; Schema: public; Owner: super
 --
 
+ALTER TABLE pfeed_deliveries ALTER COLUMN id SET DEFAULT nextval('pfeed_deliveries_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: super
+--
+
+ALTER TABLE pfeed_items ALTER COLUMN id SET DEFAULT nextval('pfeed_items_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: super
+--
+
 ALTER TABLE problems ALTER COLUMN id SET DEFAULT nextval('problems_id_seq'::regclass);
 
 
@@ -609,6 +715,7 @@ COPY active_admin_comments (id, resource_id, resource_type, author_id, author_ty
 --
 
 COPY admin_users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at) FROM stdin;
+1	pmq2001@gmail.com	$2a$10$Xb1M0ZE4MKE1aSLdAEYxRebD51p5yHfXJrtgIGDJ5o6Q5fuMz.k46	\N	\N	2011-11-23 09:09:28.171061	1	2011-11-23 09:09:28.185417	2011-11-23 09:09:28.185417	192.168.145.249	192.168.145.249	2011-11-23 09:09:21.109316	2011-11-23 09:09:28.186043
 \.
 
 
@@ -661,6 +768,22 @@ COPY items (id, book_id, name, created_at, updated_at) FROM stdin;
 
 
 --
+-- Data for Name: pfeed_deliveries; Type: TABLE DATA; Schema: public; Owner: super
+--
+
+COPY pfeed_deliveries (id, pfeed_receiver_id, pfeed_receiver_type, pfeed_item_id, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Data for Name: pfeed_items; Type: TABLE DATA; Schema: public; Owner: super
+--
+
+COPY pfeed_items (id, type, originator_id, originator_type, participant_id, participant_type, data, expiry, created_at, updated_at) FROM stdin;
+\.
+
+
+--
 -- Data for Name: problems; Type: TABLE DATA; Schema: public; Owner: super
 --
 
@@ -674,6 +797,8 @@ COPY problems (id, name, description, code, created_at, updated_at) FROM stdin;
 
 COPY schema_migrations (version) FROM stdin;
 20111120120841
+20111122130706
+20111122130707
 \.
 
 
@@ -698,6 +823,7 @@ COPY theorems (id, name, description, code, created_at, updated_at) FROM stdin;
 --
 
 COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, confirmation_token, confirmed_at, confirmation_sent_at, created_at, updated_at, name, website, location, signature, slug) FROM stdin;
+1	pmq2001@gmail.com	$2a$10$boVrfVOkD2xiqyjbG3OEjuNUwHCNggQzHGCm/iDIPk7LXdY26vVae	\N	\N	\N	1	2011-11-23 07:04:55.645173	2011-11-23 07:04:55.645173	192.168.145.249	192.168.145.249	\N	2011-11-23 07:04:55.640891	2011-11-23 07:04:23.376893	2011-11-23 07:04:23.377213	2011-11-23 07:04:55.645711	P.S.V.R	\N	\N	\N	p-s-v-r
 \.
 
 
@@ -747,6 +873,22 @@ ALTER TABLE ONLY definitions
 
 ALTER TABLE ONLY items
     ADD CONSTRAINT items_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: pfeed_deliveries_pkey; Type: CONSTRAINT; Schema: public; Owner: super; Tablespace: 
+--
+
+ALTER TABLE ONLY pfeed_deliveries
+    ADD CONSTRAINT pfeed_deliveries_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: pfeed_items_pkey; Type: CONSTRAINT; Schema: public; Owner: super; Tablespace: 
+--
+
+ALTER TABLE ONLY pfeed_items
+    ADD CONSTRAINT pfeed_items_pkey PRIMARY KEY (id);
 
 
 --
