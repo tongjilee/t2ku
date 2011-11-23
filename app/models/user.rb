@@ -27,7 +27,14 @@ class User < ActiveRecord::Base
   def books
     []
   end
-  
+  def basic_attributes
+    ret = {}
+    ret[:id]=self.id
+    ret[:name]=self.name
+    ret[:email]=self.email
+    ret[:no_validation]=true
+    ret
+  end
   extend FriendlyId
   friendly_id :name, :use => :slugged
 end

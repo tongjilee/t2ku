@@ -20,7 +20,20 @@
 <body class="<%= params[:controller] %>" id="<%= pos_signature %>">
 	<header>
 	  <%= render 'headnav' %>
-	  <%= render 'loginreg' if !user_signed_in? %>
+	  <% if !user_signed_in? %>
+      <%=render 'loginreg' %>
+    <% else %>
+      <% content_for :butt do %>
+
+        <script type="text/javascript" charset="utf-8">
+          jQuery(function() {
+            T2Ku.current_user = new T2Ku.Models.User;
+            T2Ku.current_user.set(<%=raw current_user.basic_attributes.to_json%>);
+          });
+        </script>
+
+      <% end %>
+    <% end %>
 	  <%= alert_or_notice(flash[:alert],flash[:notice]) %>
 	</header>
 	

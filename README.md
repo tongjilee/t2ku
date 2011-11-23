@@ -1,4 +1,6 @@
 vncserver -geometry 1920x1200 -depth 24 :1
+vncserver -geometry 1680x1050 -depth 24 :2
+http://en.t2ku131.org:3000/
 ----
 
 su - pg

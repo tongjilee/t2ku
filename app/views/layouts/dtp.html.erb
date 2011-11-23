@@ -65,6 +65,8 @@
   </div>
   <p id="credit"><a href="http://api.jquery.com/browser/">Inspired by jQuery API-Browser</a></p>
 
+  <%= render 'commonjs' %>
   <%= javascript_include_tag "dtp" %>
+  <%= yield :butt %>
 </body>
 </html>

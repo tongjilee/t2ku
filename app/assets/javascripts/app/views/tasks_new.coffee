@@ -82,7 +82,10 @@ class T2Ku.Views.TasksNew extends Backbone.View
     )
     
   prove:(e)->
-    alert 'Under Construction'
+    if T2Ku.current_user
+      $('#new_task').submit()
+    else
+      $('#login_link').trigger('click')
     
   h2_11_clicked:(e)->
     $('#portal_help').toggle('slide',{ direction:'up' },'fast');

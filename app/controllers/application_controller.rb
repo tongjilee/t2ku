@@ -2,7 +2,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include UrlHelper
-  
+
   before_filter :set_locale,:check_browser,:render_config,:login_reg
   before_filter :session_resource_return_to
   before_filter :set_mailer_url_options
