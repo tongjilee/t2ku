@@ -19,7 +19,7 @@
 		      <li><%= link_to 'My Dashboard',account_path,id:'account_link',class:'special' %></li>
 		      <li><%= link_to I18n.t('t2ku.navigation_special.logout'),destroy_user_session_path,:method=>:delete,id:"logout_link",class:'special' %></li>
 				<% else %>
-					<li><%= link_to I18n.t('t2ku.navigation_special.login'),new_user_session_path,id:"login_link",class:'special' %></li>
+					<li><%= link_to I18n.t('t2ku.navigation_special.login'),new_user_session_path(redirect_to:request.path),id:"login_link",class:'special' %></li>
 		      <li><%= link_to I18n.t('t2ku.navigation_special.reg'),new_user_registration_path,id:"reg_link",class:'special' %></li>
 				<% end %>
 	    </div>

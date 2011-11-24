@@ -16,20 +16,6 @@ class Book < ActiveRecord::Base
   after_initialize Proc.new{
     @wiki = Gollum::Wiki.new(self.wiki_path, {}) if self.wiki_path
   }
-  def loc
-    ret = []
-    if @wiki and page = @wiki.page('Table Of Contents')
-      doc = Nokogiri::HTML(page.formatted_data)
-      doc.css('body>ul>li').collect(&:to_s).each do |string|
-        string.gsub!("href=\"/","href=\"/books/#{self.slug}/items/")
-        string.gsub!(/\$(\s)*\\S(\s)*\$/,'§')
-        # sanitize!--------------------
-        # sanitize!--------------------
-        ret << string
-      end
-    end
-    ret
-  end
   has_and_belongs_to_many :authors
   has_and_belongs_to_many :users
   before_destroy Proc.new{
@@ -78,5 +64,5 @@ def problems;[];end
       end
     end
   end
-  after_create :create_book_git!
+  after_create :create_book_git!  
 end

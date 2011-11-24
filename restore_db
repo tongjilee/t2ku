@@ -1,0 +1,5 @@
+#!/bin/bash -x
+rm -f ~pg/t2ku.sql
+cp ./t2ku.sql ~pg/t2ku.sql
+sudo -u pg psql t2ku < ~pg/t2ku.sql
+

@@ -3,6 +3,7 @@ class TasksController < InheritedResources::Base
   before_filter :authenticate_user!,:except=>[:new,:index]
   def new
     if session[:new_task_description]
+      session[:new_task_description] = nil
       @randoms = [session[:new_task_description]]
     else
       @randoms = [

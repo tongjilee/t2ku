@@ -53,11 +53,17 @@
     <div class="sphinxsidebar">
 
       <div class="sphinxsidebarwrapper">
-          <h3><%= link_to 'Table Of Contents',book_item_path(@book,'Table Of Contents') %></h3>
+          <h3><%= link_to @book.title,@book %></h3>
           <ul>
-<li><a class="reference external" href="<%= book_path(@book) %>">Frontpage</a></li>
-<%@book.loc.each do |item| %>
-<%=raw item %>
+<%@book.items.pageitems.topitems.order('rank').each do |item| %>
+<li><%=link_to item.name,book_item_path(@book,item) %></li>
+<% if item.children.count > 0 %>
+  <ul>
+    <% item.children.each do |child| %>
+    <li><%=link_to child.name,book_item_path(@book,child) %></li>
+    <% end %>
+  </ul>
+<% end %>
 <%end %>
 
 </ul>
@@ -71,7 +77,13 @@
                                 title="next chapter">What&#8217;s New in Python 2.6</a></p>
 <h3>This Page</h3>
 <ul class="this-page-menu">
-<li><a href="../bugs.html">Report a Bug</a></li>
+<li>
+  <%if @item %>
+    <%= link_to 'Edit',edit_book_item_path(@book,@item) %>
+  <%else %>
+    <%= link_to 'Edit this Book',edit_book_path(@book) %>
+  <%end %>
+</li>
 
 <li><a href="../_sources/whatsnew/2.7.txt"
        rel="nofollow">Show Source</a></li>

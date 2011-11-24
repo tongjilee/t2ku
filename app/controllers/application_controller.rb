@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   include UrlHelper
 
   before_filter :set_locale,:check_browser,:render_config,:login_reg
-  before_filter :session_resource_return_to
   before_filter :set_mailer_url_options
 #  before_filter 'render text:request.base_url and return'
   before_filter Proc.new{
@@ -38,15 +37,9 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  def session_resource_return_to
-    if params[:redirect_to]
-      session[:resource_return_to] = params[:redirect_to]
-    end
-  end
-  
   def after_sign_in_path_for(resource_or_scope)
     if params[:redirect_to].blank?
-      root_path
+      super(resource_or_scope)
     else
       params[:redirect_to]
     end

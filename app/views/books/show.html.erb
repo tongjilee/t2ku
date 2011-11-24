@@ -1,5 +1,5 @@
 <div class="section" id="">
-  <h1><%= @book.title %></h1>
+  <h1><%= @book.title %><span class="edit_span">[ <%= link_to 'Edit this Book',edit_book_path(@book) %> ]</span></h1>
   <table class="docutils field-list" frame="void" rules="none">
   <col class="field-name" />
 
@@ -23,9 +23,17 @@
   </table>
   <p><%= @book.description %></p>
   
-  <h2>Recent Edits</h2>
-  <p>Much as Python 2.6 incorporated features from Python 3.0,
-  version 2.7 incorporates some of the new features
-  in Python 3.1.  The 2.x series continues to provide tools
-  for migrating to the 3.x series.</p>
+  <h2>Table Of Contents</h2>
+  <ul>
+  <%@book.items.pageitems.topitems.order('rank').each do |item| %>
+    <li><%=link_to item.name,book_item_path(@book,item) %></li>
+    <% while item.children.count > 0 %>
+      <ul>
+        <% item.children.each do |child| %>
+        <li><%=link_to child.name,book_item_path(@book,child) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <%end %>
+  </ul>
 </div>

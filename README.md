@@ -21,6 +21,9 @@ su - pg
 
 postgres -D /usr/local/pgsql/data >>/usr/local/pgsql/logfile.log 2>&1 &
 
+psql t2ku < t2ku.sql
+
+
 postgres -D /usr/local/pgsql/data
 
 
