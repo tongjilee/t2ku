@@ -1,3 +1,14 @@
+#T2Ku
+
+The semantic and automated deductive wiki of Mathematics.
+
+##Features
+1. auto save on "Parse" and "Prove"
+2. no extra requests if not changed in #1
+
+
+##deployment
+
 vncserver -geometry 1920x1200 -depth 24 :1
 
 vncserver -geometry 1680x1050 -depth 24 :2

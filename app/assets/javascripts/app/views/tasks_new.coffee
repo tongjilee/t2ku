@@ -36,6 +36,8 @@ class T2Ku.Views.TasksNew extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
     $('#parse_result').hide()
+    $('#parse_suc').hide();
+    window.active_Task.set({description:window.myCodeMirror.getValue()})
     window.myCodeMirror.setSelection({line:0,ch:0},{line:0,ch:0})
     $('.CodeMirror-lines pre').not('.CodeMirror-cursor').each((index, Element)->
       str = $(this).html()
@@ -64,6 +66,7 @@ class T2Ku.Views.TasksNew extends Backbone.View
         for kid in $(Element).children()
           code.push({i:index,kid})
       )
+      msg = ''
       try
         window.active_Task.parseFrom(code)
       catch exception
@@ -77,16 +80,17 @@ class T2Ku.Views.TasksNew extends Backbone.View
           $(pre).addClass('syntaxErrorLine')
         $("#please_rectify").html(to_rectify);
         $("#parse_result").show('slide',{direction:'up'},'fast');
-        
-      #TODO: parseFrom succeed?
+
+      $('#parse_suc').show('slide',{direction:'up'},'fast') unless msg;
     )
     
   prove:(e)->
+    window.active_Task.set({description:window.myCodeMirror.getValue()})
     if T2Ku.current_user
       $('#new_task').submit()
     else
       $('#login_link').trigger('click')
-    
+
   h2_11_clicked:(e)->
     $('#portal_help').toggle('slide',{ direction:'up' },'fast');
     $('#portal_arrow_down').toggle();

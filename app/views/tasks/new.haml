@@ -36,6 +36,12 @@
               %strong{style:'line-height:17px'}
                 = tt('parse_error')+':'
             %ol#please_rectify
+        #parse_suc.ui-widget.afailure{style:'display:none'}
+          .ui-state-highlight.ui-corner-all{style:"padding: 0pt 0.7em;"}
+            %p
+              %span.ui-icon.ui-icon-info{style:"float: left; margin-right: .3em"}
+              %strong{style:'line-height:17px'} Syntax OK
+
         =form_for @task do |f|
           - @task.description ||= @randoms[Random.new.rand(0..@randoms.size-1)]
           = f.text_area :description, :id=>'text_desc_textarea',:class=>'text_desc_textarea_cla',:rows=>@task.description.split("\n").count

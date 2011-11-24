@@ -22,6 +22,20 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
+--
+-- Name: adminpack; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS adminpack WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION adminpack; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION adminpack IS 'administrative functions for PostgreSQL';
+
+
 SET search_path = public, pg_catalog;
 
 SET default_tablespace = '';
@@ -512,7 +526,7 @@ ALTER SEQUENCE tasks_id_seq OWNED BY tasks.id;
 -- Name: tasks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: super
 --
 
-SELECT pg_catalog.setval('tasks_id_seq', 1, false);
+SELECT pg_catalog.setval('tasks_id_seq', 1, true);
 
 
 --
@@ -807,6 +821,7 @@ COPY schema_migrations (version) FROM stdin;
 --
 
 COPY tasks (id, user_id, description, created_at, updated_at) FROM stdin;
+1	1	Let $G$ be a group,\r\n    $e$ be the identity of $G$,\r\n    $*$ be the binary operation of $G$.\r\nSuppose that\r\n    $x*x=e$ for all $x\\in G$.\r\nProve that\r\n    $G$ is commutative.	2011-11-24 00:36:33.020398	2011-11-24 00:36:33.020398
 \.
 
 
@@ -823,7 +838,7 @@ COPY theorems (id, name, description, code, created_at, updated_at) FROM stdin;
 --
 
 COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, confirmation_token, confirmed_at, confirmation_sent_at, created_at, updated_at, name, website, location, signature, slug) FROM stdin;
-1	pmq2001@gmail.com	$2a$10$boVrfVOkD2xiqyjbG3OEjuNUwHCNggQzHGCm/iDIPk7LXdY26vVae	\N	\N	\N	1	2011-11-23 07:04:55.645173	2011-11-23 07:04:55.645173	192.168.145.249	192.168.145.249	\N	2011-11-23 07:04:55.640891	2011-11-23 07:04:23.376893	2011-11-23 07:04:23.377213	2011-11-23 07:04:55.645711	P.S.V.R	\N	\N	\N	p-s-v-r
+1	pmq2001@gmail.com	$2a$10$boVrfVOkD2xiqyjbG3OEjuNUwHCNggQzHGCm/iDIPk7LXdY26vVae	\N	\N	\N	6	2011-11-24 00:35:47.708397	2011-11-24 00:07:16.0837	127.0.0.1	127.0.0.1	\N	2011-11-23 07:04:55.640891	2011-11-23 07:04:23.376893	2011-11-23 07:04:23.377213	2011-11-24 00:35:47.709512	P.S.V.R	\N	\N	\N	p-s-v-r
 \.
 
 

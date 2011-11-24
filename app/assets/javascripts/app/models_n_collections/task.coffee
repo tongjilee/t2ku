@@ -4,6 +4,9 @@ class T2Ku.Models.Task extends Backbone.Model
     super(options)
     console.log('Task model instantiated')
     this.startOver()
+    this.bind("change:description",->
+      $.post('/ajax/save_new_task_description',{new_task_description:this.get('description')})
+    )
     
   already_declared:(math)->
     @vertices[math]!=null
@@ -22,7 +25,7 @@ class T2Ku.Models.Task extends Backbone.Model
     
   objects2html:->
     JSON.stringify(@vertices)+'<br>'+JSON.stringify(@edges)
-  
+
   parseFrom:(code)->
     assert(code.length>0,'No information provided.')
     #code = [<span>,<span>,...,<span>]

@@ -28,4 +28,5 @@ T2ku::Application.routes.draw do
 
   root :to => 'home#index'  
   post '/ajax/create_user' => 'ajax#create_user'
+  post '/ajax/save_new_task_description' => 'ajax#save_new_task_description'
 end
