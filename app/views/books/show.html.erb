@@ -28,6 +28,7 @@
   <%@book.items.pageitems.topitems.order('rank').each do |item| %>
     <li><%=link_to item.name,book_item_path(@book,item) %></li>
     <% while item.children.count > 0 %>
+    <% item=item.child %>
       <ul>
         <% item.children.each do |child| %>
         <li><%=link_to child.name,book_item_path(@book,child) %></li>
