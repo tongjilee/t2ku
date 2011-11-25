@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 
 module ApplicationHelper
+
   def err(resource)
     alert_or_notice(resource.errors.full_messages.join(",#{tt('and')}"),nil,{go_away:false}) if resource and !resource.errors.empty?
   end

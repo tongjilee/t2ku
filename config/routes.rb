@@ -21,6 +21,7 @@ T2ku::Application.routes.draw do
   resources :problems
   resources :references
   resources :authors
+  resources :robots
   resources :helps
   get 'account' => 'account#index',:as=>'account'
   get 'downloads' => 'home#downloads',:as=>'downloads'

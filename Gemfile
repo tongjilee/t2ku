@@ -36,15 +36,14 @@ group :test do
 end
 
 gem 'devise'
-gem 'inherited_resources'
+gem 'inherited_resources','1.3.0'
 gem 'haml'
 gem 'pry'
 
 
-gem 'activeadmin'
-gem "meta_search",    '>= 1.1.0.pre'
 
-
+gem 'activeadmin',:git=>'git://github.com/pmq20/active_admin.git'
+gem 'meta_search',    '>= 1.1.0.pre'
 
 
 gem 'grit', :git=>'git://github.com/mojombo/grit.git'

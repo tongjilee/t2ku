@@ -98,7 +98,6 @@
 
       </div>
 
-       
         <div class="repos watching" id="watched_books" style="margin-top:-15px">
 
           <div class="myapps-index">
@@ -109,7 +108,7 @@
                 <form id="searchbar">
                   <fieldset class="part">
                     <h2 id="searchcount">Watched <%= link_to 'Books',books_path,style:'color:#8D79F2'%> (<%= current_user.books.count %>)</h2>
-                    <div class="field">
+                    <div class="field" style="margin-right:-22px;margin-top:-26px">
                       <label>&nbsp;
                       </label>
                     </div>
@@ -149,6 +148,7 @@
 
 
        </div>
+
     </div>
 <%= clear %>
 </div>

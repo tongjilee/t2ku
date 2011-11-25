@@ -481,6 +481,50 @@ SELECT pg_catalog.setval('problems_id_seq', 1, false);
 
 
 --
+-- Name: robots; Type: TABLE; Schema: public; Owner: super; Tablespace: 
+--
+
+CREATE TABLE robots (
+    id integer NOT NULL,
+    user_id integer,
+    name character varying(255),
+    description text,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+ALTER TABLE public.robots OWNER TO super;
+
+--
+-- Name: robots_id_seq; Type: SEQUENCE; Schema: public; Owner: super
+--
+
+CREATE SEQUENCE robots_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.robots_id_seq OWNER TO super;
+
+--
+-- Name: robots_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: super
+--
+
+ALTER SEQUENCE robots_id_seq OWNED BY robots.id;
+
+
+--
+-- Name: robots_id_seq; Type: SEQUENCE SET; Schema: public; Owner: super
+--
+
+SELECT pg_catalog.setval('robots_id_seq', 1, true);
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: super; Tablespace: 
 --
 
@@ -704,6 +748,13 @@ ALTER TABLE problems ALTER COLUMN id SET DEFAULT nextval('problems_id_seq'::regc
 -- Name: id; Type: DEFAULT; Schema: public; Owner: super
 --
 
+ALTER TABLE robots ALTER COLUMN id SET DEFAULT nextval('robots_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: super
+--
+
 ALTER TABLE tasks ALTER COLUMN id SET DEFAULT nextval('tasks_id_seq'::regclass);
 
 
@@ -734,7 +785,7 @@ COPY active_admin_comments (id, resource_id, resource_type, author_id, author_ty
 --
 
 COPY admin_users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at) FROM stdin;
-1	pmq2001@gmail.com	$2a$10$Xb1M0ZE4MKE1aSLdAEYxRebD51p5yHfXJrtgIGDJ5o6Q5fuMz.k46	\N	\N	2011-11-24 09:15:55.793716	3	2011-11-24 09:15:55.80045	2011-11-24 07:09:46.026408	127.0.0.1	127.0.0.1	2011-11-23 09:09:21.109316	2011-11-24 09:15:55.801044
+1	pmq2001@gmail.com	$2a$10$Xb1M0ZE4MKE1aSLdAEYxRebD51p5yHfXJrtgIGDJ5o6Q5fuMz.k46	\N	\N	2011-11-24 09:15:55.793716	4	2011-11-25 00:56:01.500619	2011-11-24 09:15:55.80045	192.168.145.249	127.0.0.1	2011-11-23 09:09:21.109316	2011-11-25 00:56:01.501239
 \.
 
 
@@ -820,6 +871,15 @@ COPY problems (id, name, description, code, created_at, updated_at) FROM stdin;
 
 
 --
+-- Data for Name: robots; Type: TABLE DATA; Schema: public; Owner: super
+--
+
+COPY robots (id, user_id, name, description, created_at, updated_at) FROM stdin;
+1	1	Adios	The first automated reasoning robot of T2Ku.	2011-11-25 02:43:17.185214	2011-11-25 02:44:19.260237
+\.
+
+
+--
 -- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: super
 --
 
@@ -828,6 +888,7 @@ COPY schema_migrations (version) FROM stdin;
 20111122130706
 20111122130707
 20111124094947
+20111125023105
 \.
 
 
@@ -853,7 +914,7 @@ COPY theorems (id, name, description, code, created_at, updated_at) FROM stdin;
 --
 
 COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, confirmation_token, confirmed_at, confirmation_sent_at, created_at, updated_at, name, website, location, signature, slug) FROM stdin;
-1	pmq2001@gmail.com	$2a$10$boVrfVOkD2xiqyjbG3OEjuNUwHCNggQzHGCm/iDIPk7LXdY26vVae	\N	\N	\N	15	2011-11-24 08:54:32.234406	2011-11-24 08:53:21.805031	127.0.0.1	127.0.0.1	\N	2011-11-23 07:04:55.640891	2011-11-23 07:04:23.376893	2011-11-23 07:04:23.377213	2011-11-24 08:54:32.235279	P.S.V.R	\N	\N	\N	p-s-v-r
+1	pmq2001@gmail.com	$2a$10$boVrfVOkD2xiqyjbG3OEjuNUwHCNggQzHGCm/iDIPk7LXdY26vVae	\N	\N	\N	16	2011-11-25 03:22:11.710231	2011-11-24 08:54:32.234406	127.0.0.1	127.0.0.1	\N	2011-11-23 07:04:55.640891	2011-11-23 07:04:23.376893	2011-11-23 07:04:23.377213	2011-11-25 03:22:11.711291	P.S.V.R	\N	\N	\N	p-s-v-r
 \.
 
 
@@ -927,6 +988,14 @@ ALTER TABLE ONLY pfeed_items
 
 ALTER TABLE ONLY problems
     ADD CONSTRAINT problems_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: robots_pkey; Type: CONSTRAINT; Schema: public; Owner: super; Tablespace: 
+--
+
+ALTER TABLE ONLY robots
+    ADD CONSTRAINT robots_pkey PRIMARY KEY (id);
 
 
 --

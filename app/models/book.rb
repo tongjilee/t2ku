@@ -64,5 +64,8 @@ def problems;[];end
       end
     end
   end
-  after_create :create_book_git!  
+  after_create :create_book_git!
+  def firstpage
+    self.items.pageitems.topitems.rank.first
+  end
 end

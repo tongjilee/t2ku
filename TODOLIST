@@ -3,9 +3,20 @@
 2. async mails
 3. wiki sanitization
 4. cdn for public
+5. before publishing, delete passwords like pm...
 
 
 
+class CreateRobots < ActiveRecord::Migration
+  def change
+    create_table :robots do |t|
+      t.integer :user_id
+      t.string :name
+      t.text :description
+      t.timestamps
+    end
+  end
+end
 
 
 

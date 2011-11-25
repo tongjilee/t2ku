@@ -3,8 +3,8 @@ class TasksController < InheritedResources::Base
   before_filter :authenticate_user!,:except=>[:new,:index]
   def new
     if session[:new_task_description]
-      session[:new_task_description] = nil
       @randoms = [session[:new_task_description]]
+      session[:new_task_description] = nil
     else
       @randoms = [
 #       'Let $X$ be a set. Let $1$ be the identity function on $X$. Let $\alpha$ be a permutation of $X$. Prove that \[1\alpha=\alpha=\alpha 1.\]'

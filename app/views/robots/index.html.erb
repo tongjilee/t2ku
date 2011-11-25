@@ -1,0 +1,46 @@
+<div class="myapps-index">
+<div id="content" style="width: 980px;">
+
+<div class="panel" id="app-index">
+  <div class="panel-body">
+    <form id="searchbar">
+      <fieldset class="part">
+        <h2 id="searchcount">T2Ku Robots</h2>
+				<div class="field">
+				          <label>
+				            <a class="viewall" href="">View All</a>
+				            <span class="separator"> | </span>
+				            Filter by Name
+				          </label>
+				          <input type="text" class="text" id="livesearch">
+        </div>
+	     </fieldset>
+    </form>
+
+<% @robots.each do |item| %>
+        <div class="user_app part" onclick="window.location.href='<%= j robot_path(item) %>'">
+          <a class="resources" href="<%= robot_path(item) %>">
+            <span class="database"></span>
+          </a>
+          <div class="app_name">
+            <h3><%= link_to item.name,item %></h3>
+          </div>
+          <ul class="submenu">
+						<li><a href="#" onclick="event.stopPropagation()">Rank 1</a></li>
+						<li><a href="#" onclick="event.stopPropagation()">Solved 0 Problems</a></li>
+						<li></li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+<%end %>      
+
+  <div id="searchnotfound">
+    <h3>You can develop your own robot and deploy it to T2Ku!&nbsp;&nbsp;<a class="viewall" href="<%= new_robot_path %>">New Robot<span> →</span></a></h3>
+  </div>
+
+  </div>
+</div>
+
+</div>
+</div>
+

@@ -1,6 +1,16 @@
 <div class="section" id="">
   <h1><%= @item.name %><span class="edit_span">[ <%= link_to 'Edit this Page',edit_book_item_path(@book,@item) %> ]</span></h1>
   <p><%=raw @item.page.formatted_data %></p>
+
+<%unless @item.children.blank?%>
+  <h2>Subsections</h2>
+  <ul>
+  <%@item.children.each do |item| %>
+    <li><%=link_to item.name,book_item_path(@book,item) %></li>
+    <%=raw traverse_children(item) %>
+  <%end %>
+  </ul>
+<%end%>
   
   <h2>Recent Edits</h2>
 </div>
