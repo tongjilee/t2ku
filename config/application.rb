@@ -59,6 +59,5 @@ module T2ku
     config.assets.version = '1.0'
     
     config.assets.precompile += ['app.js','code.js','bookview.css','pre_application.css','dtp.css','dtp.js']
-    config.assets.precompile += %w[active_admin.css active_admin.js]
   end
 end

@@ -1,9 +1,5 @@
 # -*- encoding : utf-8 -*-
 T2ku::Application.routes.draw do
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
   constraints(Subdomain){match '/'=>'tasks#new'}
   devise_for :users,:path => 'd' do
     get "/register", :to => "registrations#new"

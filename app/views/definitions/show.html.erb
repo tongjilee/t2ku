@@ -1,0 +1,11 @@
+<dd id="function" class="text absolute">
+  <h1>#1 <%= @definition.name %> <span class="type"><%= link_to 'Edit',edit_definition_path(@definition) %></span> <span class="fav" id="$.each234"></span></h1>
+  <p></p>
+  <h2>Internals</h2>
+  <h3>$\mathcal{F}$lora-$\mathcal{2}$ Statements</h3>
+  <pre><%= @definition.code %></pre>
+  <h3>Ruby Matchers</h3>
+  <pre><%= @definition.regexp_code %></pre>
+  <h2>Descriptions</h2>
+  <p>...</p>
+</dd>

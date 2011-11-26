@@ -40,12 +40,6 @@ gem 'inherited_resources','1.3.0'
 gem 'haml'
 gem 'pry'
 
-
-
-gem 'activeadmin',:git=>'git://github.com/pmq20/active_admin.git'
-gem 'meta_search',    '>= 1.1.0.pre'
-
-
 gem 'grit', :git=>'git://github.com/mojombo/grit.git'
 gem 'github-markup', [">= 0.4.0", "< 1.0.0"]
 gem 'pygments.rb', "~> 0.2.0"

@@ -4,7 +4,7 @@
 3. wiki sanitization
 4. cdn for public
 5. before publishing, delete passwords like pm...
-
+6. flora2 highlighter
 
 
 class CreateRobots < ActiveRecord::Migration

@@ -1,0 +1,36 @@
+<style type="text/css" media="screen">
+.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
+.activeline {background: #f0fcff !important;}
+.CodeMirror-scroll {
+  font-size:18px;
+  line-height:24px;
+}
+label{
+  margin-right:20px;
+}
+input{
+  display:inline-block;
+}  
+</style>
+<%= form_for @definition do |f| %>
+<p><label for="name">Thing to Define:</label><%= f.text_field :name %></p>
+<p>Please type in the $\mathcal{F}$lora-$\mathcal{2}$ statements of this definition:</p>
+  <%= f.text_area :code %>
+<p>Please add some Ruby Matchers to this definition:</p>
+  <%= f.text_area :regexp_code %>
+  <%= f.submit 'Submit',style:'margin-top:10px'%>
+<%end %>
+<% content_for :butt do %>
+  <%= javascript_include_tag 'code' %>
+  <script type="text/javascript" charset="utf-8">
+    var editor = CodeMirror.fromTextArea(document.getElementById("definition_code"), {
+      mode: "prolog",
+      lineNumbers: true
+    });
+    var editor2 = CodeMirror.fromTextArea(document.getElementById("definition_regexp_code"), {
+      mode: "ruby",
+      lineNumbers: true,
+      theme:'rubyblue'
+    });
+  </script>
+<%end %>

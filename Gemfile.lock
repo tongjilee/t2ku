@@ -7,21 +7,6 @@ GIT
       mime-types (~> 1.15)
       posix-spawn (~> 0.3.6)
 
-GIT
-  remote: git://github.com/pmq20/active_admin.git
-  revision: 5411ba85d8ca7c31e04df238aaf4e43bbfff88c2
-  specs:
-    activeadmin (0.3.4)
-      devise (>= 1.1.2)
-      fastercsv
-      formtastic (>= 2.0.0)
-      inherited_resources (<= 1.3.0)
-      jquery-rails (>= 1.0.0)
-      kaminari (>= 0.12.4)
-      meta_search (>= 0.9.2)
-      rails (>= 3.0.0)
-      sass (>= 3.1.0)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -76,10 +61,7 @@ GEM
     execjs (1.2.9)
       multi_json (~> 1.0)
     expression_parser (0.9.0)
-    fastercsv (1.5.4)
     ffi (1.0.11)
-    formtastic (2.0.2)
-      rails (~> 3.0)
     friendly_id (4.0.0.beta14)
     github-markup (0.5.3)
     haml (3.1.3)
@@ -93,17 +75,10 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.1)
-    kaminari (0.12.4)
-      rails (>= 3.0.0)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meta_search (1.1.1)
-      actionpack (~> 3.1.0)
-      activerecord (~> 3.1.0)
-      activesupport (~> 3.1.0)
-      polyamorous (~> 0.5.0)
     metaclass (0.0.1)
     method_source (0.6.7)
       ruby_parser (>= 2.3.1)
@@ -117,8 +92,6 @@ GEM
       rubypants (>= 0.2.0)
     orm_adapter (0.0.5)
     pg (0.11.0)
-    polyamorous (0.5.0)
-      activerecord (~> 3.0)
     polyglot (0.3.3)
     posix-spawn (0.3.6)
     pry (0.9.7.4)
@@ -207,7 +180,6 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
-  activeadmin!
   coffee-rails (~> 3.1.1)
   devise
   friendly_id (~> 4.0.0.beta14)
@@ -216,7 +188,6 @@ DEPENDENCIES
   haml
   inherited_resources (= 1.3.0)
   jquery-rails
-  meta_search (>= 1.1.0.pre)
   mocha
   mustache (>= 0.11.2, < 1.0.0)
   nokogiri (~> 1.4)
