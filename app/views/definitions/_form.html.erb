@@ -12,6 +12,7 @@ input{
   display:inline-block;
 }  
 </style>
+
 <%= form_for @definition do |f| %>
 <p><label for="name">Thing to Define:</label><%= f.text_field :name %></p>
 <p>Please type in the $\mathcal{F}$lora-$\mathcal{2}$ statements of this definition:</p>
@@ -20,6 +21,7 @@ input{
   <%= f.text_area :regexp_code %>
   <%= f.submit 'Submit',style:'margin-top:10px'%>
 <%end %>
+
 <% content_for :butt do %>
   <%= javascript_include_tag 'code' %>
   <script type="text/javascript" charset="utf-8">

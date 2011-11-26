@@ -3,9 +3,17 @@
   <p></p>
   <h2>Internals</h2>
   <h3>$\mathcal{F}$lora-$\mathcal{2}$ Statements</h3>
-  <pre><%= @definition.code %></pre>
+  <pre style="font-size:14px"><%= @definition.code %></pre>
   <h3>Ruby Matchers</h3>
-  <pre><%= @definition.regexp_code %></pre>
+  <pre id="regexp_code" class="cm-s-rubyblue" style="font-size:14px"><%= @definition.regexp_code %></pre>
   <h2>Descriptions</h2>
   <p>...</p>
 </dd>
+
+<% content_for :butt do %>
+  <%= javascript_include_tag 'code' %>
+  <script type="text/javascript" charset="utf-8">
+      CodeMirror.runMode($("#regexp_code").text(), "ruby",
+                         document.getElementById("regexp_code"));
+  </script>
+<%end %>

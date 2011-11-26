@@ -5,4 +5,5 @@
 // the compiled file.
 //
 //= require codemirror
+//= require runmode
 //= require_tree ./code
