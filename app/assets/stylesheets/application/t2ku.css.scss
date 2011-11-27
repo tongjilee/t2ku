@@ -204,7 +204,7 @@ code.with_background {
 #portal_main, #portal_main_2{
   min-height:267px;
 }
-#portal_main {
+#portal_main,#console_main {
   background: #21212b; /* Old browsers */
   background: -moz-linear-gradient(top, #21212b 0%, #15151c 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#21212b), color-stop(100%,#15151c)); /* Chrome,Safari4+ */
@@ -230,6 +230,10 @@ code.with_background {
   border-width: 1px 1px 2px;
   margin: 5px 5px 5px 140px;
   padding: 18px;
+}
+#console_main{
+  margin:0;
+  height:300px;
 }
 #portal_help{
 	text-indent:20px;
