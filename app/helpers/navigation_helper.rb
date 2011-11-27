@@ -24,7 +24,7 @@ module NavigationHelper
     }
     case controller.controller_name
     when 'tasks'
-      retarr << lize(link_to('Tasks on Queue',tasks_path))
+      retarr << lize(link_to('Tasks on Queue',tasks_path),is_listing)
     when 'items'
       retarr << lize(link_to('Books',books_path))
       retarr << lize(link_to(@book.title,@book))

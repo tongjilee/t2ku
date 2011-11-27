@@ -1,0 +1,617 @@
+<style type="text/css" media="screen">
+/********** header **********/
+TABLE.body TR TD.caption {background-color:#1A5CC8; padding:1px 1px 0px 1px; text-align:center;}
+TABLE.body TR TD.title {color:White; font-size:1.5em; text-align:center;}
+TABLE.body TR TD.locale {font:bold 0.75em sans-serif; text-align:center; vertical-align:middle;}
+TABLE.body TR TD.locale A {color:White;}
+TABLE.body TR TD.panel {border:1px solid #1A5CC8; padding:1px;}
+TABLE.body TR TD.footer {border:1px solid #1A5CC8; padding:1px; text-align:right;}
+TABLE.panel TR TH, TABLE.panel TR TD {padding-right:15px; padding-top:5px;}
+TABLE.panel TR TH DIV {border-bottom:1px solid #1A5CC8; font-family:sans-serif; font-size:1.13em; font-weight:normal; text-align:left;}
+TABLE.panel A, TABLE.panel A:link, TABLE.panel A:hover {color:#1A5CC8;}
+
+/********** status **********/
+TABLE.status {background-color:#FFFFFF; color:#000000; font:14px Arial, Helvetica, sans-serif;}
+TABLE.status {margin-bottom:10px; padding:0px; text-align:center;}
+TABLE.status_nofilter {border-top:1px solid #808080;}
+TABLE.status TR.header {background-color:#EEEEEE; font-size:13px; font-weight:bold; height:36px;}
+TABLE.status TR.even {height:37px;}
+TABLE.status TR.odd {background-color:#F4F4F4; height:37px;}
+TABLE.status TD, TABLE.status TH {padding:2px 6px;}
+TABLE.status TD {border-top:1px solid #DDDDDD;}
+TABLE.status .id {border-left:1px solid #DDDDDD; border-right:1px solid #DDDDDD; width:64px;}
+TABLE.status .date {border-right:1px solid #DDDDDD; width:86px; white-space:nowrap;}
+TABLE.status .coder {border-right:1px solid #DDDDDD; width:248px;}
+TABLE.status TD.coder {text-align:left;}
+TABLE.status .problem {border-right:1px solid #DDDDDD; width:268px;}
+TABLE.status TD.problem {text-align:left;}
+TABLE.status .language {border-right:1px solid #DDDDDD; width:76px;}
+TABLE.status .result, TABLE.status .verdict_wt, TABLE.status .verdict_ac, TABLE.status .verdict_rj {border-right:1px solid #DDDDDD; width:160px; min-width:125px;}
+TABLE.status .verdict_ac {color:#006600;}
+TABLE.status .verdict_rj, TABLE.status .verdict_rj A, TABLE.status .verdict_rj A:hover, TABLE.status .verdict_rj A:visited {color:#800000;}
+TABLE.status .test {border-right:1px solid #DDDDDD; width:52px;}
+TABLE.status .runtime {border-right:1px solid #DDDDDD; width:68px;}
+TABLE.status .memory {border-right:1px solid #DDDDDD; width:76px;}
+TABLE.status TD.status_footer {border-top:1px solid #808080; padding:10px 0px 0px 0px;}
+TABLE.status_footer {color:#000000; font:14px Arial, Helvetica, sans-serif; width:100%;}
+TABLE.status_footer TD {border:none; padding:0px; vertical-align:top;}
+TABLE.status_footer TD.footer_left {padding:0px 32px 0px 0px;}
+TABLE.status_footer TD.footer_right {text-align:right; vertical-align:top;}
+P.status_filter {border:0px; color:#000000; font:12px Arial, Helvetica, sans-serif; margin:0px; padding:0px 0px 4px 0px; text-align:right;}
+TABLE.status A, TABLE.status_footer A, P.status_filter A {color:#0044CC; text-decoration:underline;}
+TABLE.status TD.status_filter {border-bottom:1px solid #808080; border-top:none; padding:0px;}
+
+/********** rating **********/
+TABLE.rating {background-color:#FFFFFF; color:#000000; font:14px Arial, Helvetica, sans-serif;}
+TABLE.rating {border-top:1px solid #808080; margin-bottom:10px; padding:0px; text-align:center;}
+TABLE.rating TR.header {background-color:#EEEEEE; font-size:13px; font-weight:bold; height:36px;}
+TABLE.rating TR.even, TABLE.rating TR.odd {height:37px;}
+TABLE.rating TR.odd {background-color:#F4F4F4;}
+TABLE.rating TH, TABLE.rating TD {border-right:1px solid #DDDDDD; padding:2px 6px;}
+TABLE.rating TD {border-top:1px solid #DDDDDD;}
+TABLE.rating .rank {border-left:1px solid #DDDDDD; width:52px;}
+TABLE.rating .id {width:64px;}
+TABLE.rating .date {width:86px; white-space:nowrap;}
+TABLE.rating .coder {width:248px;}
+TABLE.rating TD.coder {text-align:left;}
+TABLE.rating .language {width:76px;}
+TABLE.rating .runtime {width:68px;}
+TABLE.rating .memory {width:76px;}
+TABLE.rating TD.rating_footer {border-right:none; border-top:1px solid #808080; padding:10px 0px 0px 0px;}
+TABLE.rating_footer {color:#000000; font:14px Arial, Helvetica, sans-serif; width:100%;}
+TABLE.rating_footer TD {border:none; padding:0px; vertical-align:top;}
+TABLE.rating_footer TD.footer_left {padding-right:32px; text-align:left;}
+TABLE.rating_footer TD.footer_right {text-align:right;}
+TABLE.rating A {color:#0044CC; text-decoration:underline;}
+
+/********** problem **********/
+TABLE.sample {border:solid 1px #1A5CC8; border-collapse:collapse;}
+TABLE.sample TR TD, TABLE.sample TR TH {border:solid 1px #1A5CC8; padding:3px; vertical-align:top;}
+TABLE.sample TR TH {color:#1A5CC8;}
+H2.problem_title {color:#1A5CC8; font-size:2em; font-weight:normal; margin:0; text-align:center;}
+H3.problem_subtitle {color:#1A5CC8; margin:14px 0 4px 0;}
+DIV.problem_limits {line-height:1.4em; margin:0 0 14px 0; text-align:center;}
+DIV.problem_source {line-height:1.4em; margin:10px 0 0 0;}
+DIV.problem_links {font-size:1.15em; margin:14px 0 6px 0; line-height:1.4em;}
+DIV.problem_centered_picture {margin:12px 0 12px 0; text-align:center;}
+IMG.problem_laimage {margin:4px 15px 6px 0;}
+IMG.problem_raimage {margin:4px 0 6px 15px;}
+DIV.problem_par, DIV.problem_par_pre {margin:0 0 10px 0;}
+DIV.problem_par {line-height:1.4em;}
+DIV.problem_par_normal {text-align:justify;}
+DIV.problem_par_center {text-align:center;}
+DIV.problem_par_right {font-style:italic; padding-left:60px; text-align:right;}
+DIV.problem_par UL, DIV.problem_par OL {margin-bottom:10px; margin-top:4px;}
+DIV.problem_par TABLE {border:solid 1px Black; border-collapse:collapse;}
+DIV.problem_par TABLE TR TH, DIV.problem_par TABLE TR TD {border:solid 1px Black; padding:4px;}
+DIV.problem_par TABLE PRE {margin:0;}
+SPAN.problem_tags_toggle, SPAN.problem_tags_toggle A {color:Gray;}
+.myac {background:url(images/ok2.png) no-repeat left; padding-left:23px;}
+.prnver TABLE.sample, .prnver TABLE.sample TR TD, .prnver TABLE.sample TR TH {border-color:Black;}
+.prnver TABLE.sample TR TH, .prnver H2.problem_title, .prnver H3.problem_subtitle {color:Black;}
+.prnver A, .prnver A:hover, .prnver A:visited {color:Black;}
+
+/********** problemset **********/
+TABLE.problemset {border:solid 1px #999; border-collapse:collapse;}
+TABLE.problemset TR TH, TABLE.problemset TR TD {border:solid 1px #999; padding:3px;}
+TABLE.problemset TR TH {background-color:#A4C6FF; color:Black; text-align:center;}
+TABLE.problemset TR TD {background-color:#C6C6C6; color:Black; text-align:center;}
+TABLE.problemset TR TD.name {text-align:left;}
+TABLE.problemset TR TD.source {font-size:0.81em; text-align:left;}
+TABLE.problemset_footer {margin-bottom:6px; margin-top:2px; width:843px;}
+TD.problemset_footer_left {padding-left:1px; text-align:left;}
+TD.problemset_footer_right {padding-right:1px; text-align:right;}
+.active_filter {font-weight:bold;}
+
+/********** ranklist **********/
+TABLE.ranklist {border:solid 1px #999; border-collapse:collapse;}
+TABLE.ranklist TR TH, TABLE.ranklist TR TD {border:solid 1px #999; padding:2px 4px;}
+TABLE.ranklist TR TH {background-color:#A4C6FF; color:Black; text-align:center;}
+TABLE.ranklist TR TD {background-color:#C6C6C6; color:Black; text-align:center;}
+TABLE.ranklist TR TD.name {text-align:left;}
+TABLE.ranklist TR TD.first {font:bold 1.3em Arial, Helvetica, sans-serif;}
+TABLE.ranklist TR.current TD {background-color:#D4D4D4;}
+
+/********** monitor **********/
+.monitor_page {}
+.monitor_header {text-align:center; font-weight:bold; margin-bottom:1em;}
+.monitor_footer {text-align:center; font-style:italic; margin-top:1em; font-size:0.81em; font-family:Arial,Helvetica,sans-serif;}
+TABLE.monitor {border-collapse:collapse;}
+TABLE.monitor TR TD, TABLE.monitor TR TH {border:solid 1px #BBB; padding:2px 4px; text-align:center; font-family:Arial,Helvetica,sans-serif;}
+TABLE.monitor TR TD {font-size:0.88em;}
+TABLE.monitor TR TH {font-size:0.81em; line-height:2em;}
+TABLE.monitor TR TD.author {text-align:left;}
+TABLE.monitor TR TD I {font-size:0.71em; font-style:normal;}
+TABLE.monitor TR TD.acc, TABLE.monitor TR TD.acb, TABLE.monitor TR TD.rej, TABLE.monitor TR TD.snt {font-family:Verdana,Geneva,'Bitstream Vera Sans','DejaVu Sans',sans-serif;}
+TABLE.monitor TR TD.acc {color:#070;}
+TABLE.monitor TR TD.acb {color:#070; font-weight:bold;}
+TABLE.monitor TR TD.rej {color:#B00;}
+TABLE.monitor TR TD.snt {color:#F60;}
+TABLE.monitor TR.stat_row TD {border:0; font-size:0.81em; font-style:italic;}
+TABLE.monitor TR.stat_row TD.stat_caption {text-align:right;}
+TABLE.monitor TR.hlauthor TD {background-color:#c4d8ff;}
+TABLE.monitor TR.oddrow TD {background-color:#f0f0f8;}
+TABLE.monitor TR.evenrow TD {background-color:#e4e4f8;}
+
+/********** other **********/
+
+table.gray {border:1px solid #CCC; border-collapse:collapse;}
+table.gray tr td, table.gray tr th {border:1px solid #CCC; font-family:Arial, Helvetica, sans-serif; font-size:0.81em; vertical-align:middle;}
+table.gray tr td {background-color:#F8F8F8;}
+table.gray tr th {background-color:#ECECEC;}
+table.watch {border:1px solid #999; border-collapse:collapse;}
+table.watch tr td, table.watch tr th {border:1px solid #999; font-family:Arial, Helvetica, sans-serif; font-size:0.81em; padding:0px 2px 0px 2px; vertical-align:middle;}
+table.horz {border-collapse:collapse;}
+table.horz tr td, table.horz tr th {border-bottom:1px solid #000; padding:5px;}
+table.horz2 {border-collapse:collapse; border-top:2px solid #000; border-bottom:2px solid #000;}
+table.horz2 tr td {border-bottom:1px solid #000; padding:5px;}
+TABLE.spaces TR TD.header {border-bottom:solid 1px Silver; font:bold 1.2em Arial, Helvetica, sans-serif; padding-top:0.7em;}
+TABLE.spaces .spaceem {font-style:italic; color:#999;}
+IMG.runpic {border:0; position:relative; top:1px;}
+TABLE.source_code {background-color:#ddd; border:solid 3px #ddd;}
+TABLE.source_code TR TD {margin:0px; padding:1px 3px 1px 3px; vertical-align:top;}
+TD.source_code_td PRE {font-size:1em; margin:0px;}
+TD.source_lines_td DIV, TD.source_code_td PRE CODE {font:0.81em monospace, "monospace for firefox";}
+TD.source_lines_td {border-right:solid 2px #ccc; color:#777; width:30px;}
+DIV.source_code_div {overflow-x:auto; width:640px;}
+#errorMessageBox {max-width:800px; text-align:left;}
+#errorMessage {color:Red;}
+#errorDetailsSwitch {margin-bottom:2px; margin-top:1em;}
+#errorDetailsSwitch A {border-bottom:dashed 1px Gray; color:Black; text-decoration:none;}
+#errorDetails {display:none; font:0.81em monospace, "monospace for firefox"; margin-top:0.5em; white-space:pre-wrap;}
+A.dashedLink {border-bottom:dashed 1px Gray; margin-bottom:1px; text-decoration:none;}
+.formSection {margin-bottom:5px; text-align:left; width:700px;}
+.fullWidth {width:100%;}
+A.printout:link {color:#1A5CC8}
+A.printout:visited {color:Maroon;}
+table.rulers {border-collapse:collapse;}
+table.rulers tr td, table.rulers tr th {padding:3px 8px; font-family:Arial, Helvetica, sans-serif; font-size:0.81em; vertical-align:middle;}
+table.ruletop, tr.ruletop td, tr.ruletop th {border-top:1px solid #CCC;}
+table.rulebottom, tr.rulebottom td, tr.rulebottom th {border-bottom:1px solid #CCC;}
+
+/********** stats **********/
+TABLE.stats {border-collapse:collapse; border-width:0px;}
+TABLE.stats TR TD {padding:2px; vertical-align:middle;}
+TABLE.stats TR TD.name {font:1.13em Arial, Helvetica, sans-serif; text-align:left; width:170px;}
+TABLE.stats TR TD.value {font:1.19em monospace, "monospace for firefox"; text-align:right; width:80px;}
+TABLE.stats TR TD.valueWide {font:1.19em monospace, "monospace for firefox"; text-align:right; width:200px;}
+
+/********** news **********/
+DIV.news_block {margin:1.2em 0em 1.2em 0em;}
+DIV.news_caption {border-bottom:dashed 1px Silver; font-size:1.19em; font-weight:bold; margin-bottom:0.3em;}
+
+/********** the team **********/
+TABLE.team_person TR TD {background-color:#eee; height:130px; padding:7px; vertical-align:top; width:370px;}
+TABLE.team_person TR TD IMG.photo {float:left; margin:0px 7px 0px 0px;}
+TABLE.team_person TR TD DIV.name {font-size:1.3em; margin-bottom:0.3em;}
+
+/********** forum **********/
+.board {font:14px Arial, Helvetica, sans-serif;}
+.board A:link {color:#1A5CC8; text-decoration:none;}
+.board A:visited {color:#404040; text-decoration:none;}
+.board A:hover {text-decoration:underline;}
+.forum0 {background-color:#ECECEC;}
+.forum1 {background-color:#F8F8F8;}
+.pages {border-bottom:solid 1px #b0b0b0; border-top:solid 1px #b0b0b0; color:#404040; text-align:center;}
+.beforepages {color:#545454; margin-bottom:5px; text-align:center;}
+.afterpages {border-top:solid 1px #b0b0b0; color:#545454; padding-top:5px; text-align:center;}
+.thread {border-bottom:solid 1px #c0c0c0; color:#404040;}
+.treedate {color:#808080; font:12px Arial, Helvetica, sans-serif;}
+.message {font:14px monospace, "monospace for firefox";}
+.subject {margin:3px 0px; padding:3px; background-color:#C0DBFF; text-align:center;}
+.subject {font:17px Arial, Helvetica, sans-serif; font-weight:bold;}
+.forum_plus {background:url(images/forum/plus.gif) no-repeat 0px 2px; padding-left:18px;}
+.forum_minus {background:url(images/forum/minus.gif) no-repeat 0px 2px; padding-left:18px;}
+.forum_msg_plus {background:url(images/forum/msg_plus.gif) no-repeat 0px 2px; padding-left:20px;}
+.forum_msg_minus {background:url(images/forum/msg_minus.gif) no-repeat 0px 2px; padding-left:20px;}
+.forum_shift_right {margin:5px 0px 5px 25px;}
+.forum_message_box {padding:2px; background-color:#F8F8F8;}
+.forum_quote_header {margin:2px 0px 0px 25px; padding:0px 2px; font:14px Arial, Helvetica, sans-serif;}
+.forum_quote {margin:2px 0px 2px 25px; padding:2px;}
+.forum_quote {background-color:#F0F0F0;}
+.forum_quote .forum_quote {background-color:#E8E8E8;}
+.forum_quote .forum_quote .forum_quote {background-color:#E0E0E0;}
+.forum_quote .forum_quote .forum_quote .forum_quote {background-color:#D8D8D8;}
+.forum_quote .forum_quote .forum_quote .forum_quote .forum_quote {background-color:#D0D0D0;}
+.forum_quote .forum_quote .forum_quote .forum_quote .forum_quote .forum_quote {background-color:#C8C8C8;}
+.forum_quote .forum_quote .forum_quote .forum_quote .forum_quote .forum_quote .forum_quote {background-color:#C0C0C0;}
+
+/********** author **********/
+TABLE.attempt_list TR TD {padding:0px 3px;}
+TABLE.attempt_list TR TD.accepted {background-color:#90ff90;}
+TABLE.attempt_list TR TD.both {background-color:#e0f8e0;}
+TABLE.attempt_list TR TD.cmpac {background-color:#ffc8e0;}
+TABLE.attempt_list TR TD.empty A, TABLE.attempt_list TR TD.empty A:hover, TABLE.attempt_list TR TD.empty A:visited {color:#b0b0b0;}
+.author_motto {margin-bottom:1em; background-color:#D4D4D4; font-style:italic; text-align:center; border-radius:6px;}
+H2.author_name {margin-bottom:6px; color:#1A5CC8; font-size:2em; font-weight:normal; text-align:center;}
+.author_flag, .author_stats, .author_links, .author_submitted, .author_solved, .author_none_solved, .author_comparison {margin-bottom:1em;}
+TABLE.author_comparison_legend TR TD {vertical-align:top;}
+TABLE.author_comparison_legend TR TD.padright {padding-right:5px;}
+.solved_map_links {margin-bottom:4px;}
+
+</style>
+
+
+
+<table width="100%" cellspacing="0" cellpadding="0" class="body">
+  <tbody>
+    <tr>
+      <td class="caption">
+        <table width="100%" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="130" class="locale"><a href=
+              "/status.aspx?locale=en">ENG</a>&nbsp;&nbsp;<a href=
+              "/status.aspx?locale=ru">RUS</a></td>
+
+              <td class="title">Tasks on Queue</td>
+
+              <td width="130"></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="panel">
+        <table width="100%" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="130" valign="top" align="center" style="padding-bottom:5px;">
+                
+              </td>
+
+              <td valign="top" align="left">
+                <table width="100%" cellspacing="0" cellpadding="0" class="panel">
+                  <tbody>
+                    <tr>
+                      <th width="25%">
+                        <div>
+                          Online Judge
+                        </div>
+                      </th>
+
+                      <th width="25%">
+                        <div>
+                          Problems
+                        </div>
+                      </th>
+
+                      <th width="25%">
+                        <div>
+                          Authors
+                        </div>
+                      </th>
+
+                      <th width="25%">
+                        <div>
+                          Online contests
+                        </div>
+                      </th>
+                    </tr>
+
+                    <tr>
+                      <td valign="top" align="left"><a href="/">About Online
+                      Judge</a><br />
+                      <a href="/help.aspx?topic=faq">Frequently asked
+                      questions</a><br />
+                      <a href="/news.aspx">Site news</a><br />
+                      <a href="/forum/">Webboard</a><br />
+                      <a href="/help.aspx?topic=links">Links</a><br /></td>
+
+                      <td valign="top" align="left"><a href="/problemset.aspx">Problem
+                      set</a><br />
+                      <a href="/submit.aspx">Submit solution</a><br />
+                      <a href="/status.aspx">Judge status</a><br /></td>
+
+                      <td valign="top">
+                        <a href="/register.aspx">Register</a><br />
+                        <a href="/authedit.aspx">Update your info</a><br />
+                        <a href="/ranklist.aspx">Authors ranklist</a><br />
+
+                        <form style="margin:0.6em 0em 0em 0em;" method="get" action=
+                        "/search.aspx">
+                          <input placeholder="Author&#226;&#8364;&#8482;s name" value=
+                          "" size="12" name="Str" /> <input type="submit" value=
+                          "Search" />
+                        </form>
+                      </td>
+
+                      <td valign="top"><a href="/contest.aspx">Current
+                      contest</a><br />
+                      <a href="/schedule.aspx">Scheduled contests</a><br />
+                      <a href="/archive.aspx">Archive</a><br /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding-top: 32px; padding-bottom: 20px;">
+        <h2 class="title">Solutions judgement results</h2>
+
+        <table cellspacing="0" cellpadding="0" align="center" class="status status_nofilter" style="width:100%">
+          <tbody>
+            <tr class="header">
+              <th class="id">ID</th>
+
+              <th class="date">Date</th>
+
+              <th class="coder">Author</th>
+
+              <th class="problem">Problem</th>
+
+              <th class="language">Language</th>
+
+              <th class="result">Judgement result</th>
+
+              <th class="test">Test #</th>
+
+              <th class="runtime">Execution time</th>
+
+              <th class="memory">Memory used</th>
+            </tr>
+
+            <tr class="even">
+              <td class="id">4003471</td>
+
+              <td class="date"><nobr>17:46:21</nobr><br />
+              <nobr>27 Nov 2011</nobr></td>
+
+              <td class="coder"><a href=
+              "author.aspx?id=116256">&lt;&lt;--Falcon--&gt;&gt;</a></td>
+
+              <td class="problem"><a href="problem.aspx?space=1&amp;num=1348">1348.
+              Goat in the Garden 2</a></td>
+
+              <td class="language">C#</td>
+
+              <td class="verdict_ac">Accepted</td>
+
+              <td class="test"><br /></td>
+
+              <td class="runtime">0.14</td>
+
+              <td class="memory">2 664 KB</td>
+            </tr>
+
+            <tr class="odd">
+              <td class="id">4003470</td>
+
+              <td class="date"><nobr>17:46:20</nobr><br />
+              <nobr>27 Nov 2011</nobr></td>
+
+              <td class="coder"><a href="author.aspx?id=115086">Dan_UndeaD</a></td>
+
+              <td class="problem"><a href="problem.aspx?space=1&amp;num=1100">1100.
+              Final Standings</a></td>
+
+              <td class="language">C++</td>
+
+              <td class="verdict_rj">Time limit exceeded</td>
+
+              <td class="test">11</td>
+
+              <td class="runtime">1.046</td>
+
+              <td class="memory">1 352 KB</td>
+            </tr>
+
+            <tr class="even">
+              <td class="id">4003469</td>
+
+              <td class="date"><nobr>17:46:05</nobr><br />
+              <nobr>27 Nov 2011</nobr></td>
+
+              <td class="coder"><a href="author.aspx?id=102540">DikNuken</a></td>
+
+              <td class="problem"><a href="problem.aspx?space=1&amp;num=1876">1876.
+              Centipede's Morning</a></td>
+
+              <td class="language">C++</td>
+
+              <td class="verdict_rj">Wrong answer</td>
+
+              <td class="test">2</td>
+
+              <td class="runtime">0.015</td>
+
+              <td class="memory">196 KB</td>
+            </tr>
+
+            <tr class="odd">
+              <td class="id">4003468</td>
+
+              <td class="date"><nobr>17:45:48</nobr><br />
+              <nobr>27 Nov 2011</nobr></td>
+
+              <td class="coder"><a href="author.aspx?id=109691">clown_krasti</a></td>
+
+              <td class="problem"><a href="problem.aspx?space=1&amp;num=1628">1628.
+              White Streaks</a></td>
+
+              <td class="language">C++</td>
+
+              <td class="verdict_ac">Accepted</td>
+
+              <td class="test"><br /></td>
+
+              <td class="runtime">0.312</td>
+
+              <td class="memory">3 820 KB</td>
+            </tr>
+
+            <tr class="even">
+              <td class="id">4003467</td>
+
+              <td class="date"><nobr>17:44:38</nobr><br />
+              <nobr>27 Nov 2011</nobr></td>
+
+              <td class="coder"><a href="author.aspx?id=116592">acquydem12</a></td>
+
+              <td class="problem"><a href="problem.aspx?space=1&amp;num=1014">1014.
+              Product of Digits</a></td>
+
+              <td class="language">C++</td>
+
+              <td class="verdict_rj">Wrong answer</td>
+
+              <td class="test">2</td>
+
+              <td class="runtime">0.031</td>
+
+              <td class="memory">212 KB</td>
+            </tr>
+
+            <tr class="odd">
+              <td class="id">4003466</td>
+
+              <td class="date"><nobr>17:44:33</nobr><br />
+              <nobr>27 Nov 2011</nobr></td>
+
+              <td class="coder"><a href="author.aspx?id=102540">DikNuken</a></td>
+
+              <td class="problem"><a href="problem.aspx?space=1&amp;num=1876">1876.
+              Centipede's Morning</a></td>
+
+              <td class="language">C++</td>
+
+              <td class="verdict_rj">Wrong answer</td>
+
+              <td class="test">2</td>
+
+              <td class="runtime">0.015</td>
+
+              <td class="memory">196 KB</td>
+            </tr>
+
+            <tr class="even">
+              <td class="id">4003465</td>
+
+              <td class="date"><nobr>17:44:20</nobr><br />
+              <nobr>27 Nov 2011</nobr></td>
+
+              <td class="coder"><a href="author.aspx?id=82991">grayluck</a></td>
+
+              <td class="problem"><a href="problem.aspx?space=1&amp;num=1434">1434. Bus
+              Routes</a></td>
+
+              <td class="language">C++</td>
+
+              <td class="verdict_rj">Crash (access violation)</td>
+
+              <td class="test">16</td>
+
+              <td class="runtime">0.031</td>
+
+              <td class="memory">1 116 KB</td>
+            </tr>
+
+            <tr class="odd">
+              <td class="id">4003464</td>
+
+              <td class="date"><nobr>17:43:34</nobr><br />
+              <nobr>27 Nov 2011</nobr></td>
+
+              <td class="coder"><a href="author.aspx?id=116592">acquydem12</a></td>
+
+              <td class="problem"><a href="problem.aspx?space=1&amp;num=1014">1014.
+              Product of Digits</a></td>
+
+              <td class="language">C++</td>
+
+              <td class="verdict_rj">Time limit exceeded</td>
+
+              <td class="test">1</td>
+
+              <td class="runtime">1.031</td>
+
+              <td class="memory">180 KB</td>
+            </tr>
+
+            <tr class="even">
+              <td class="id">4003463</td>
+
+              <td class="date"><nobr>17:43:05</nobr><br />
+              <nobr>27 Nov 2011</nobr></td>
+
+              <td class="coder"><a href="author.aspx?id=74785">-XraY-</a></td>
+
+              <td class="problem"><a href="problem.aspx?space=1&amp;num=1579">1579.
+              Coat Transportation</a></td>
+
+              <td class="language">C++</td>
+
+              <td class="verdict_ac">Accepted</td>
+
+              <td class="test"><br /></td>
+
+              <td class="runtime">0.359</td>
+
+              <td class="memory">7 472 KB</td>
+            </tr>
+
+            <tr class="odd">
+              <td class="id">4003462</td>
+
+              <td class="date"><nobr>17:42:21</nobr><br />
+              <nobr>27 Nov 2011</nobr></td>
+
+              <td class="coder"><a href="author.aspx?id=74785">-XraY-</a></td>
+
+              <td class="problem"><a href="problem.aspx?space=1&amp;num=1579">1579.
+              Coat Transportation</a></td>
+
+              <td class="language">C++</td>
+
+              <td class="verdict_rj"><a href="ce.aspx?id=4003462">Compilation
+              error</a></td>
+
+              <td class="test"><br /></td>
+
+              <td class="runtime"><br /></td>
+
+              <td class="memory"><br /></td>
+            </tr>
+
+            <tr>
+              <td class="status_footer" colspan="9">
+                <table cellspacing="0" cellpadding="0" class="status_footer">
+                  <tbody>
+                    <tr>
+                      <td class="footer_left">Show <a href=
+                      "status.aspx?space=1&amp;count=10">10</a>&nbsp;| <a href=
+                      "status.aspx?space=1&amp;count=30">30</a>&nbsp;| <a href=
+                      "status.aspx?space=1&amp;count=100">100</a>
+                      lines&nbsp;per&nbsp;page &nbsp;&#226;&#8364;&#162;&nbsp;
+                      Refresh&nbsp;every <a href=
+                      "status.aspx?space=1&amp;refresh=15">15</a>&nbsp;| <a href=
+                      "status.aspx?space=1&amp;refresh=60">60</a>&nbsp;| <a href=
+                      "status.aspx?space=1&amp;refresh=240">240</a> seconds&nbsp;|
+                      <a href=
+                      "status.aspx?space=1&amp;refresh=0">no&nbsp;refresh</a></td>
+
+                      <td class="footer_right">&#194;&#187;&nbsp;<a href=
+                      "status.aspx?space=1&amp;from=4003461">Next&nbsp;10</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="footer">&#169; 2000-2011 <a href="/team.aspx">Timus Online Judge
+      Team</a>. All rights reserved.</td>
+    </tr>
+  </tbody>
+</table>
