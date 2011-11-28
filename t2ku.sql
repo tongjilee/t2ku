@@ -789,7 +789,7 @@ COPY theorems (id, name, description, code, created_at, updated_at) FROM stdin;
 --
 
 COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, confirmation_token, confirmed_at, confirmation_sent_at, created_at, updated_at, name, website, location, signature, slug) FROM stdin;
-1	pmq2001@gmail.com	$2a$10$boVrfVOkD2xiqyjbG3OEjuNUwHCNggQzHGCm/iDIPk7LXdY26vVae	\N	\N	\N	17	2011-11-25 06:34:40.642807	2011-11-25 03:22:11.710231	127.0.0.1	127.0.0.1	\N	2011-11-23 07:04:55.640891	2011-11-23 07:04:23.376893	2011-11-23 07:04:23.377213	2011-11-25 06:39:57.848314	P.S.V.R			I hate algebra.	p-s-v-r
+1	pmq2001@gmail.com	$2a$10$boVrfVOkD2xiqyjbG3OEjuNUwHCNggQzHGCm/iDIPk7LXdY26vVae	\N	\N	\N	18	2011-11-28 01:09:58.590877	2011-11-25 06:34:40.642807	192.168.145.249	127.0.0.1	\N	2011-11-23 07:04:55.640891	2011-11-23 07:04:23.376893	2011-11-23 07:04:23.377213	2011-11-28 01:09:58.591841	P.S.V.R			I hate algebra.	p-s-v-r
 \.
 
 
