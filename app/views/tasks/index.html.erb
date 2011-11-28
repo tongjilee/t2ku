@@ -1,22 +1,25 @@
 <div id="console_main">
-  <div class="CodeMirror" id="console_main_warpper">
-    <pre id="console_main_content"></pre>
-  </div>
+  <textarea id="to_be_replaced">
+Please turn on Javascript to view this page.
+  </textarea>
 </div>
 <%content_for :butt do%>
+<%=javascript_include_tag('code')%>
 <script type="text/javascript" charset="utf-8">
   T2Ku.window_resize_handler = function(){
     var wid = window.innerWidth ? window.innerWidth : b(window).width(),
         hei = window.innerHeight ? window.innerHeight : b(window).height();
     $('#console_main').height(hei-91);
-    $('#console_main_warpper').height(hei-131);
+    $('.CodeMirror-scroll').height(hei-119);
   }
-  T2Ku.window_resize_handler();
   $(window).resize(T2Ku.window_resize_handler);
   jQuery(function(){
     window.T2KuConsole = new T2Ku.Views.Console({
-      el:$('#console_main_content')
+      el:$('#console_main')
     });
+    T2Ku.window_resize_handler();
+    T2KuConsole.tasks = new T2Ku.Collections.Tasks;
+    T2KuConsole.tasks.reset(<%=raw @tasks.to_json%>);
   });
 </script>
 <%end%>

@@ -2,7 +2,7 @@ class T2Ku.Models.Task extends Backbone.Model
   urlRoot:'/tasks'
   constructor:(options)->
     super(options)
-    console.log('Task model instantiated')
+    console.log('Task model instantiated with id='+this.get('id'))
     this.startOver()
     this.bind("change:description",->
       $.post('/ajax/save_new_task_description',{new_task_description:this.get('description')})
