@@ -7,6 +7,33 @@
 6. flora2 highlighter
 
 
++-----------------------+
+| Tables_in_t2ku        |
++-----------------------+
+| active_admin_comments |
+| admin_users           |
+| authors               |
+| authors_books         |
+| books                 |
+| books_users           |
+| definitions           |
+| items                 |
+| problems              |
+| schema_migrations     |
+| tasks                 |
+| theorems              |
+| users                 |
++-----------------------+
+
++-------------------+---------+---------+----------+
+| email             | name    | website | location |
++-------------------+---------+---------+----------+
+| pmq2001@gmail.com | P.S.V.R | NULL    | NULL     |
+| pmq2001@126.com   | pmq20   | NULL    | NULL     |
++-------------------+---------+---------+----------+
+
+
+
 class CreateRobots < ActiveRecord::Migration
   def change
     create_table :robots do |t|
