@@ -23,5 +23,12 @@ class T2Ku.Views.Console extends Backbone.View
   setNotLoading:->
     window.clearInterval(this.LoadingInterval)
 
-  setIndex:->
-    
+  setPage:->
+    myCodeMirror.setValue("
++-------------------+---------+---------+----------+\n
+| email             | name    | website | location |\n
++-------------------+---------+---------+----------+\n
+| pmq2001@gmail.com | P.S.V.R | NULL    | NULL     |\n
+| pmq2001@126.com   | pmq20   | NULL    | NULL     |\n
++-------------------+---------+---------+----------+
+    ")

@@ -20,6 +20,7 @@ Please turn on Javascript to view this page.
     T2Ku.window_resize_handler();
     T2KuConsole.tasks = new T2Ku.Collections.Tasks;
     T2KuConsole.tasks.reset(<%=raw @tasks.to_json%>);
+    T2KuConsole.setPage();
   });
 </script>
 <%end%>
